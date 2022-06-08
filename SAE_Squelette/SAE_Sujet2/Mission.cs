@@ -8,12 +8,37 @@ namespace SAE_Squelette
         private int idMission;
         private string libelleMission;
         private DateTime dateAffectation;
+        private string commentaire;
+        private static int numAuto = 0;
 
-        public Mission(int idMission, string libelleMission, DateTime dateAffectation)
+        public Mission(string libelleMission, DateTime dateAffectation, string commentaire)
         {
-            this.IdMission = idMission;
+            NumAuto++;
+            this.IdMission = NumAuto;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
+            this.Commentaire = commentaire;
+        }
+
+        public Mission(string libelleMission, DateTime dateAffectation)
+        {
+            NumAuto++;
+            this.IdMission = NumAuto;
+            this.LibelleMission = libelleMission;
+            this.DateAffectation = dateAffectation;
+        }
+
+        public static int NumAuto
+        {
+            get
+            {
+                return numAuto;
+            }
+
+            private set
+            {
+                numAuto = value;
+            }
         }
 
         public int IdMission
@@ -52,6 +77,19 @@ namespace SAE_Squelette
             set
             {
                 this.dateAffectation = value;
+            }
+        }
+
+        public string Commentaire
+        {
+            get
+            {
+                return this.commentaire;
+            }
+
+            private set
+            {
+                this.commentaire = value;
             }
         }
 
