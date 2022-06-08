@@ -29,7 +29,7 @@
             HorizontalContentAlignment="Center"
             Content="Ajouter Affectation"
             FontFamily="72 Black"
-            FontSize="22" />
+            FontSize="22" Click="Button_Click" />
         <Button
             Width="229"
             Height="94"
@@ -39,7 +39,7 @@
             HorizontalContentAlignment="Center"
             Content="Consulter&#xD;&#xA;Affectation"
             FontFamily="72 Black"
-            FontSize="22" />
+            FontSize="22" Click="Button_Click_1" />
 
     </Grid>
 </Window>

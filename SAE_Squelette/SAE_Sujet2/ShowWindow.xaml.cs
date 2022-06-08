@@ -13,11 +13,11 @@ using System.Windows.Shapes;
 namespace SAE_Sujet2
 {
     /// <summary>
-    /// Logique d'interaction pour AddAffectWindow.xaml
+    /// Logique d'interaction pour ShowWindow.xaml
     /// </summary>
-    public partial class AddAffectWindow : Window
+    public partial class ShowWindow : Window
     {
-        public AddAffectWindow()
+        public ShowWindow()
         {
             InitializeComponent();
         }

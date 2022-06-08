@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 P:\S2\SAE2.01\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
-2-69548725
+3-2109024942
 
-91319437505
+10-91827009
 192-1533232326
-AddAffectWindow.xaml;MainWindow.xaml;
+AddWindow.xaml;MainWindow.xaml;ShowWindow.xaml;
 
-False
+True
 
