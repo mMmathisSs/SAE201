@@ -131,9 +131,9 @@ namespace SAE_Squelette
             SqlDataReader reader;
             try
             {
-                if (access.openConnection())
+                if (access.OpenConnection())
                 {
-                    reader = access.getData("select * from [iut-acy\\claviozm].Mission;");
+                    reader = access.GetData("select * from [iut-acy\\claviozm].Mission;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
@@ -151,7 +151,7 @@ namespace SAE_Squelette
                         System.Windows.MessageBox.Show("No rows found.", "Important Message");
                     }
                     reader.Close();
-                    access.closeConnection();
+                    access.CloseConnection();
                 }
             }
             catch (Exception ex)

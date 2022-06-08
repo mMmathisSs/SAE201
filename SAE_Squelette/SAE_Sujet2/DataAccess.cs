@@ -15,7 +15,7 @@ namespace SAE_Squelette
         /// <summary>
         /// Connecte la base de données
         /// </summary>
-        public Boolean openConnection()
+        public Boolean OpenConnection()
         {
             Boolean ret = false;
             try
@@ -44,7 +44,7 @@ namespace SAE_Squelette
         /// <summary>
         /// Déconnecte la base de données
         /// </summary>
-        public void closeConnection()
+        public void CloseConnection()
         {
             try
             {
@@ -62,7 +62,7 @@ namespace SAE_Squelette
         /// <summary>
         /// Donne accès à des données en lecture
         /// </summary>
-        public SqlDataReader getData(String getQuery)
+        public SqlDataReader GetData(String getQuery)
         {
             SqlDataReader reader = null;
             
@@ -85,13 +85,13 @@ namespace SAE_Squelette
         /// <param name="setQuery">Requête SQL permettant d'insérer, supprimer ou modifier des données.</param>
         /// <exception cref="System.Exception">Déclenchée si la connexion, l'écriture/modification/suppression en base ou la déconnexion échouent.</exception> 
         /// <returns>Un booléen indiquant si des lignes ont été ajoutées/supprimées/modifiées.</returns>
-        public Boolean setData(String setQuery)
+        public Boolean SetData(String setQuery)
         {
             Boolean ret = false;
 
             try
             {
-                if (this.openConnection())
+                if (this.OpenConnection())
                 {
                     int modifiedLines;
                     SqlCommand command = new SqlCommand(setQuery, this.connection);
@@ -103,7 +103,7 @@ namespace SAE_Squelette
                         ret = true;
                     }
 
-                    this.closeConnection();
+                    this.CloseConnection();
                 }
             }
             catch (Exception ex)
