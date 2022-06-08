@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace SAE_Squelette
 {
-    public class Mission : ICRUD
+    public class Mission : ICRUD<Mission>
     {
 
         private int idMission;
@@ -118,6 +119,13 @@ namespace SAE_Squelette
         {
             throw new System.NotImplementedException("Not implemented");
         }
-
+        public List<Mission> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+        public List<Mission> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
