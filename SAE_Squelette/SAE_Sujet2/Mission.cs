@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace SAE_Squelette
 {
-    public class Mission : ICRUD
+    public class Mission : ICRUD<Mission>
     {
 
         private int idMission;
@@ -10,6 +12,10 @@ namespace SAE_Squelette
         private DateTime dateAffectation;
         private string commentaire;
         private static int numAuto = 0;
+
+        public Mission()
+        {
+        }
 
         public Mission(string libelleMission, DateTime dateAffectation, string commentaire)
         {
@@ -118,6 +124,45 @@ namespace SAE_Squelette
         {
             throw new System.NotImplementedException("Not implemented");
         }
-
+        public List<Mission> FindAll()
+        {
+            List<Mission> listeMissions = new List<Mission>();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+            try
+            {
+                if (access.openConnection())
+                {
+                    reader = access.getData("select * from [iut-acy\\claviozm].Mission;");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Mission uneMission = new Mission();
+                            uneMission.IdMission = reader.GetInt32(0);
+                            uneMission.LibelleMission = reader.GetString(1);
+                            uneMission.DateAffectation = reader.GetDateTime(2);
+                            uneMission.Commentaire = reader.GetString(3);
+                            listeMissions.Add(uneMission);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    reader.Close();
+                    access.closeConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+            return listeMissions;
+        }
+        public List<Mission> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
