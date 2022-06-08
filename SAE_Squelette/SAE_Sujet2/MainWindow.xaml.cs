@@ -28,13 +28,13 @@ namespace SAE_Sujet2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddWindow addWindow = new AddWindow();
-            addWindow.Show();
+            addWindow.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ShowWindow showWindow = new ShowWindow();
-            showWindow.Show();
+            showWindow.ShowDialog();
         }
     }
 }
