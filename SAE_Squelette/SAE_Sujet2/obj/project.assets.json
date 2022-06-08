@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Squelette\\SAE_Squelette.csproj",
-      "projectName": "SAE_Squelette",
-      "projectPath": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Squelette\\SAE_Squelette.csproj",
+      "projectUniqueName": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "projectName": "SAE_Sujet2",
+      "projectPath": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
       "packagesPath": "C:\\Users\\bellahcy\\.nuget\\packages\\",
-      "outputPath": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Squelette\\obj\\",
+      "outputPath": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,6 +63,9 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
