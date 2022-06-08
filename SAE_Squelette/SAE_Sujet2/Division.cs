@@ -9,12 +9,27 @@ namespace SAE_Squelette
         private int idDivision;
         private string libelleDivision;
         private List<Mission> lesMissions = new List<Mission>();
+        private static int numAuto = 0;
 
-        public Division(int idDivision, string libelleDivision, List<Mission> lesMissions)
+        public Division(string libelleDivision, List<Mission> lesMissions)
         {
-            this.IdDivision = idDivision;
+            NumAuto++;
+            this.IdDivision = NumAuto;
             this.LibelleDivision = libelleDivision;
             this.LesMissions = lesMissions;
+        }
+
+        public static int NumAuto
+        {
+            get
+            {
+                return numAuto;
+            }
+
+            private set
+            {
+                numAuto = value;
+            }
         }
 
         public int IdDivision

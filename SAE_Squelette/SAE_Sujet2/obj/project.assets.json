@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\bellahcy\\.nuget\\packages\\": {},
+    "C:\\Users\\claviozm\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "projectUniqueName": "C:\\Users\\claviozm\\Source\\Repos\\mMmathisSs\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
       "projectName": "SAE_Sujet2",
-      "projectPath": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
-      "packagesPath": "C:\\Users\\bellahcy\\.nuget\\packages\\",
-      "outputPath": "P:\\S2\\SAE2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
+      "projectPath": "C:\\Users\\claviozm\\Source\\Repos\\mMmathisSs\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "packagesPath": "C:\\Users\\claviozm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\claviozm\\Source\\Repos\\mMmathisSs\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\bellahcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\claviozm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

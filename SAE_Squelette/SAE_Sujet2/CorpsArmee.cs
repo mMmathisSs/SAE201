@@ -10,12 +10,27 @@ namespace SAE_Squelette
         private int idCorpsArmee;
         private string nomCorpsArmee;
         private List<Division> lesDivisions = new List<Division>();
+        private static int numAuto = 0;
 
-        public CorpsArmee(int idCorpsArmee, string nomCorpsArmee, List<Division> lesDivisions)
+        public CorpsArmee(string nomCorpsArmee, List<Division> lesDivisions)
         {
-            this.IdCorpsArmee = idCorpsArmee;
+            NumAuto++;
+            this.IdCorpsArmee = NumAuto;
             this.NomCorpsArmee = nomCorpsArmee;
             this.LesDivisions = lesDivisions;
+        }
+
+        public static int NumAuto
+        {
+            get
+            {
+                return numAuto;
+            }
+
+            private set
+            {
+                numAuto = value;
+            }
         }
 
         public int IdCorpsArmee
