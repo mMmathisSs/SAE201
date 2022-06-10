@@ -8,11 +8,9 @@
     Title="Affectation Admin"
     Width="800"
     Height="450"
-    Icon="/star.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d"
-    Icon="/Images/star.png">
+    mc:Ignorable="d" Icon="/star.png">
     <Grid>
         <Label
             Width="758"

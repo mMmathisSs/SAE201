@@ -20,7 +20,6 @@ namespace SAE_Sujet2
     public partial class ShowWindow : Window
     {
         public ObservableCollection<Mission> LesMissions { get; set; }
-        public object ApplicationData { get; }
 
         public ShowWindow()
         {
@@ -33,7 +32,7 @@ namespace SAE_Sujet2
             LesMissions.Add(new Mission("Mission 5", new DateTime(2021, 07, 01)));
             this.DataContext = this;
             //lvMission.ItemsSource = LesMissions;
-            //lvMission.ItemsSource = ApplicationData.listeMissions;
+            lvMission.ItemsSource = ApplicationData.listeMissions;
         }
 
         private void butRetour_Click(object sender, RoutedEventArgs e)
