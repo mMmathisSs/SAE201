@@ -4,7 +4,7 @@ using System.IO;
 
 namespace SAE_Squelette
 {
-    public class CorpsArmee : ICRUD
+    public class CorpsArmee : ICRUD<CorpsArmee>
     {
 
         private int idCorpsArmee;
@@ -92,6 +92,14 @@ namespace SAE_Squelette
         public void Create()
         {
             throw new System.NotImplementedException("Not implemented");
+        }
+        public List<CorpsArmee> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+        public List<CorpsArmee> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
         }
     }
 }

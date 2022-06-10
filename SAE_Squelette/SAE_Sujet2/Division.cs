@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SAE_Squelette
 {
-    public class Division : ICRUD
+    public class Division : ICRUD<Division>
     {
 
         private int idDivision;
@@ -91,6 +91,14 @@ namespace SAE_Squelette
         public void Create()
         {
             throw new System.NotImplementedException("Not implemented");
+        }
+        public List<Division> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+        public List<Division> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
         }
     }
 }

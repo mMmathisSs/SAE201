@@ -20,6 +20,7 @@ namespace SAE_Sujet2
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Set an icon using code
         public MainWindow()
         {
             InitializeComponent();
