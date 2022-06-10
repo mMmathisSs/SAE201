@@ -34,6 +34,7 @@ namespace SAE_Squelette
             this.IdMission = NumAuto;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
+            this.Commentaire = null;
         }
 
         public static int NumAuto
@@ -110,7 +111,10 @@ namespace SAE_Squelette
 
             private set
             {
-                this.commentaire = value;
+                if (String.IsNullOrEmpty(value))
+                    this.commentaire = "Pas de commentaire";
+                else
+                    this.commentaire = value;
             }
         }
 

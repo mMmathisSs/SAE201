@@ -6,8 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\claviozm\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\claviozm\\.nuget\\packages",
+      "C:\\Users\\chaussoc\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\chaussoc\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
