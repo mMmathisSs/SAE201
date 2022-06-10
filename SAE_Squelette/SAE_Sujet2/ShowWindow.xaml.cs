@@ -33,7 +33,7 @@ namespace SAE_Sujet2
             LesMissions.Add(new Mission("Mission 5", new DateTime(2021, 07, 01)));
             this.DataContext = this;
             //lvMission.ItemsSource = LesMissions;
-            lvMission.ItemsSource = ApplicationData.LesMissions;
+            //lvMission.ItemsSource = ApplicationData.listeMissions;
         }
 
         private void butRetour_Click(object sender, RoutedEventArgs e)
