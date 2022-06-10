@@ -8,6 +8,7 @@
     Title="ShowWindow"
     Width="800"
     Height="450"
+    Icon="/star.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">

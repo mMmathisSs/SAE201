@@ -114,3 +114,4 @@ P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2_Markup
 P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2_MarkupCompile.lref
 P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.dll
 P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.pdb
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Debug\netcoreapp3.1\Images\star.png
