@@ -22,6 +22,14 @@ namespace SAE_Squelette
             this.LesMissions = lesMissions;
         }
 
+        public Division(string libelleDivision, List<Mission> lesMissions)
+        {
+            NumAuto++;
+            this.IdDivision = NumAuto;
+            this.LibelleDivision = libelleDivision;
+            this.LesMissions = lesMissions;
+        }
+
         public Division()
         {
         }

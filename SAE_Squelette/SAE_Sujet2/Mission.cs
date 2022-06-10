@@ -28,6 +28,15 @@ namespace SAE_Squelette
             this.Commentaire = commentaire;
         }
 
+        public Mission(string libelleMission, DateTime dateAffectation, string commentaire)
+        {
+            NumAuto++;
+            this.IdMission = NumAuto;
+            this.LibelleMission = libelleMission;
+            this.DateAffectation = dateAffectation;
+            this.Commentaire = commentaire;
+        }
+
         public Mission(string libelleMission, DateTime dateAffectation)
         {
             NumAuto++;

@@ -105,3 +105,12 @@ P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Suje
 P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.dll
 P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.pdb
 P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.genruntimeconfig.cache
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.csproj.AssemblyReference.cache
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\AddWindow.g.cs
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ShowWindow.g.cs
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\App.g.cs
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2_MarkupCompile.cache
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2_MarkupCompile.lref
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.dll
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.pdb
