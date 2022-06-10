@@ -8,6 +8,7 @@ namespace SAE_Squelette
     {
 
         private int idMission;
+        private int idDivision;
         private string libelleMission;
         private DateTime dateAffectation;
         private string commentaire;
@@ -17,10 +18,11 @@ namespace SAE_Squelette
         {
         }
 
-        public Mission(string libelleMission, DateTime dateAffectation, string commentaire)
+        public Mission(int idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
         {
             NumAuto++;
             this.IdMission = NumAuto;
+            this.IdDivision = idDivision;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
             this.Commentaire = commentaire;
@@ -57,6 +59,19 @@ namespace SAE_Squelette
             set
             {
                 this.idMission = value;
+            }
+        }
+
+        public int IdDivision
+        {
+            get
+            {
+                return this.idDivision;
+            }
+
+            set
+            {
+                this.idDivision = value;
             }
         }
 
@@ -133,16 +148,17 @@ namespace SAE_Squelette
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [iut-acy\\claviozm].Mission;");
+                    reader = access.GetData("select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Mission uneMission = new Mission();
                             uneMission.IdMission = reader.GetInt32(0);
-                            uneMission.LibelleMission = reader.GetString(1);
+                            uneMission.IdDivision = reader.GetInt32(1);
                             uneMission.DateAffectation = reader.GetDateTime(2);
                             uneMission.Commentaire = reader.GetString(3);
+                            uneMission.LibelleMission = reader.GetString(4);
                             listeMissions.Add(uneMission);
                         }
                     }
