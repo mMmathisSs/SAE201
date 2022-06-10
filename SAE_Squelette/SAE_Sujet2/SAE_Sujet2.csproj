@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <None Update="Images\star.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

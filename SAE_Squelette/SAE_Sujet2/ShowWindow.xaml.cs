@@ -20,6 +20,7 @@ namespace SAE_Sujet2
     public partial class ShowWindow : Window
     {
         public ObservableCollection<Mission> LesMissions { get; set; }
+       
 
         public ShowWindow()
         {
