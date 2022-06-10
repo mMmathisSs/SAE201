@@ -13,7 +13,7 @@
         <DataGrid
             x:Name="dgSalarie"
             Width="780"
-            Margin="0,10,0,84"
+            Margin="0,217,0,84"
             HorizontalAlignment="Center"
             AutoGenerateColumns="False"
             ItemsSource="{Binding LesMissions}">
@@ -30,8 +30,29 @@
                     Width="*"
                     Binding="{Binding DateAffectation}"
                     Header="Date d'affectation" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Commentaire}"
+                    Header="Commentaire" />
             </DataGrid.Columns>
         </DataGrid>
+        <ListView
+            x:Name="lvMission"
+            Width="195"
+            Height="197"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Width="150"
+                        DisplayMemberBinding="{Binding LibelleMission}"
+                        Header="Missions" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button
             x:Name="butRetour"
             Width="190"
