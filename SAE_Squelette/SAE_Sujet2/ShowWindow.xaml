@@ -8,6 +8,8 @@
     Title="ShowWindow"
     Width="800"
     Height="450"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <DataGrid
@@ -28,7 +30,7 @@
                     Header="Libelle" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding DateAffectation}"
+                    Binding="{Binding DateAffectation, StringFormat=dd/MM/yyyy}"
                     Header="Date d'affectation" />
                 <DataGridTextColumn
                     Width="*"

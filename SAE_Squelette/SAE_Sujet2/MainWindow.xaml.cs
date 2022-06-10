@@ -26,16 +26,16 @@ namespace SAE_Sujet2
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddWindow addWindow = new AddWindow();
-            addWindow.ShowDialog();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void butConsulter_Click(object sender, RoutedEventArgs e)
         {
             ShowWindow showWindow = new ShowWindow();
             showWindow.ShowDialog();
+        }
+
+        private void butAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindow addWindow = new AddWindow();
+            addWindow.ShowDialog();
         }
     }
 }
