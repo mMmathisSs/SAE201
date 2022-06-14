@@ -28,22 +28,13 @@ namespace SAE_Squelette
             this.Commentaire = commentaire;
         }
 
-        public Mission(string libelleMission, DateTime dateAffectation, string commentaire)
+        public Mission(int idDivision, string libelleMission, DateTime dateAffectation)
         {
             NumAuto++;
             this.IdMission = NumAuto;
+            this.IdDivision = idDivision;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
-            this.Commentaire = commentaire;
-        }
-
-        public Mission(string libelleMission, DateTime dateAffectation)
-        {
-            NumAuto++;
-            this.IdMission = NumAuto;
-            this.LibelleMission = libelleMission;
-            this.DateAffectation = dateAffectation;
-            this.Commentaire = null;
         }
 
         public static int NumAuto
@@ -68,7 +59,14 @@ namespace SAE_Squelette
 
             set
             {
-                this.idMission = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("idmission < 0");
+                }
+                else
+                {
+                    this.idMission = value;
+                }
             }
         }
 
@@ -81,7 +79,14 @@ namespace SAE_Squelette
 
             set
             {
-                this.idDivision = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("iddivision < 0");
+                }
+                else
+                {
+                    this.idDivision = value;
+                }
             }
         }
 

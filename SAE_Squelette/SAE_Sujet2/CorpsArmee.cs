@@ -55,7 +55,14 @@ namespace SAE_Squelette
 
             set
             {
-                this.idCorpsArmee = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("idCorpsArmee < 0");
+                }
+                else
+                {
+                    this.idCorpsArmee = value;
+                }
             }
         }
 

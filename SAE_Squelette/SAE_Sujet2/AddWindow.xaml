@@ -12,9 +12,9 @@
     MinHeight="600"
     MaxWidth="450"
     MaxHeight="600"
-    Icon="/star.png"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" Icon="/star.png">
+    mc:Ignorable="d" 
+    Icon="/star.png">
     <Grid Width="450" Height="600">
         <Label
             Width="258"

@@ -56,7 +56,14 @@ namespace SAE_Squelette
 
             set
             {
-                this.idDivision = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("idDivision < 0");
+                }
+                else
+                {
+                    this.idDivision = value;
+                }
             }
         }
 
@@ -69,7 +76,14 @@ namespace SAE_Squelette
 
             set
             {
-                this.idCorpsArmee = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("idCorpsArmee < 0");
+                }
+                else
+                {
+                    this.idCorpsArmee = value;
+                }
             }
         }
 
