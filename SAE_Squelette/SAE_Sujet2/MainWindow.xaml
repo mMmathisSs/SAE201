@@ -8,7 +8,9 @@
     Title="Affectation Admin"
     Width="800"
     Height="450"
-    mc:Ignorable="d">
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d" Icon="/star.png">
     <Grid>
         <Label
             Width="758"
@@ -21,25 +23,29 @@
             FontFamily="72 Black"
             FontSize="36" />
         <Button
+            x:Name="butAjouter"
             Width="229"
             Height="94"
             Margin="81,179,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
+            Click="butAjouter_Click"
             Content="Ajouter Affectation"
             FontFamily="72 Black"
-            FontSize="22" Click="Button_Click" />
+            FontSize="22" />
         <Button
+            x:Name="butConsulter"
             Width="229"
             Height="94"
             Margin="0,179,81,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
+            Click="butConsulter_Click"
             Content="Consulter&#xD;&#xA;Affectation"
             FontFamily="72 Black"
-            FontSize="22" Click="Button_Click_1" />
+            FontSize="22" />
 
     </Grid>
 </Window>

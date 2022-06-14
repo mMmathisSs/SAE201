@@ -9,7 +9,12 @@
     Width="450"
     Height="600"
     MinWidth="450"
-    mc:Ignorable="d" MinHeight="600" MaxWidth="450" MaxHeight="600">
+    MinHeight="600"
+    MaxWidth="450"
+    MaxHeight="600"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d" 
+    Icon="/star.png">
     <Grid Width="450" Height="600">
         <Label
             Width="258"
@@ -81,7 +86,8 @@
             Margin="62,512,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Annuler" Click="Button_Click" />
+            Click="Button_Click"
+            Content="Annuler" />
 
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 
 namespace SAE_Squelette
@@ -18,6 +19,18 @@ namespace SAE_Squelette
             this.IdCorpsArmee = NumAuto;
             this.NomCorpsArmee = nomCorpsArmee;
             this.LesDivisions = lesDivisions;
+        }
+
+        public CorpsArmee(string nomCorpsArmee)
+        {
+            NumAuto++;
+            this.IdCorpsArmee = NumAuto;
+            this.NomCorpsArmee = nomCorpsArmee;
+            this.LesDivisions = lesDivisions;
+        }
+
+        public CorpsArmee()
+        {
         }
 
         public static int NumAuto
@@ -42,7 +55,14 @@ namespace SAE_Squelette
 
             set
             {
-                this.idCorpsArmee = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("idCorpsArmee < 0");
+                }
+                else
+                {
+                    this.idCorpsArmee = value;
+                }
             }
         }
 
@@ -77,6 +97,7 @@ namespace SAE_Squelette
             throw new System.NotImplementedException("Not implemented");
         }
 
+
         public void Delete()
         {
             throw new System.NotImplementedException("Not implemented");
@@ -95,7 +116,37 @@ namespace SAE_Squelette
         }
         public List<CorpsArmee> FindAll()
         {
-            throw new NotImplementedException();
+            List<CorpsArmee> listeCorpsArmee = new List<CorpsArmee>();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    reader = access.GetData("select * from [iut-acy\\claviozm].CORPS_ARMEE;");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            CorpsArmee unCorpsArmee = new CorpsArmee();
+                            unCorpsArmee.IdCorpsArmee = reader.GetInt32(0);
+                            unCorpsArmee.NomCorpsArmee = reader.GetString(1);
+                            listeCorpsArmee.Add(unCorpsArmee);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    reader.Close();
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+            return listeCorpsArmee;
         }
         public List<CorpsArmee> FindBySelection(string criteres)
         {
