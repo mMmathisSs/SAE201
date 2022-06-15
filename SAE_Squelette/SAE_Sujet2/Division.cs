@@ -4,6 +4,10 @@ using System.Data.SqlClient;
 
 namespace SAE_Squelette
 {
+    /// <summary>
+    /// Permet de créer et de stocker une division avec comme information son id l'id du corps d'armée auquel il appartient, 
+    /// son libellé et une liste de mission
+    /// </summary>
     public class Division : ICRUD<Division>
     {
 
@@ -11,42 +15,45 @@ namespace SAE_Squelette
         private int idCorpsArmee;
         private string libelleDivision;
         private List<Mission> lesMissions = new List<Mission>();
-        private static int numAuto = 0;
 
-        public Division(int idCorpsArmee, string libelleDivision, List<Mission> lesMissions)
+        /// <summary>
+        /// Constructeur de Division avec tous les paramètres
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="idCorpsArmee"></param>
+        /// <param name="libelleDivision"></param>
+        /// <param name="lesMissions"></param>
+        public Division(int idDivision, int idCorpsArmee, string libelleDivision, List<Mission> lesMissions)
         {
-            NumAuto++;
-            this.IdDivision = NumAuto;
+            this.IdDivision = idDivision;
             this.IdCorpsArmee = idCorpsArmee;
             this.LibelleDivision = libelleDivision;
             this.LesMissions = lesMissions;
         }
 
-        public Division(string libelleDivision, List<Mission> lesMissions)
+        /// <summary>
+        /// Constructeur de Division sans liste
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="libelleDivision"></param>
+        /// <param name="lesMissions"></param>
+        public Division(int idDivision, string libelleDivision, List<Mission> lesMissions)
         {
-            NumAuto++;
-            this.IdDivision = NumAuto;
+            this.IdDivision = idDivision;
             this.LibelleDivision = libelleDivision;
             this.LesMissions = lesMissions;
         }
 
+        /// <summary>
+        /// Constructeur vide de Division
+        /// </summary>
         public Division()
         {
         }
 
-        public static int NumAuto
-        {
-            get
-            {
-                return numAuto;
-            }
-
-            private set
-            {
-                numAuto = value;
-            }
-        }
-
+        /// <summary>
+        /// Propriété de l'id de la division
+        /// </summary>
         public int IdDivision
         {
             get
@@ -67,6 +74,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété de l'id du corps d'armée
+        /// </summary>
         public int IdCorpsArmee
         {
             get
@@ -87,6 +97,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété du libellé de la division
+        /// </summary>
         public string LibelleDivision
         {
             get
@@ -100,6 +113,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété de la liste de missions
+        /// </summary>
         public List<Mission> LesMissions
         {
             get
@@ -113,28 +129,42 @@ namespace SAE_Squelette
             }
         }
 
-        public Division(object libelleDivision)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-
-
+        /// <summary>
+        /// Méthode pour supprimer une division
+        /// </summary>
         public void Delete()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour mettre à jour une division
+        /// </summary>
         public void Update()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour lire une division
+        /// </summary>
         public void Read()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour créer un division
+        /// </summary>
         public void Create()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour extraire les divisions d'une BD
+        /// </summary>
+        /// <returns></returns>
         public List<Division> FindAll()
         {
             List<Division> listeDivision = new List<Division>();
@@ -170,6 +200,12 @@ namespace SAE_Squelette
             }
             return listeDivision;
         }
+
+        /// <summary>
+        /// Méthode pour extraire les divisions d'une BD avec un filtre
+        /// </summary>
+        /// <param name="criteres"></param>
+        /// <returns></returns>
         public List<Division> FindBySelection(string criteres)
         {
             throw new NotImplementedException();

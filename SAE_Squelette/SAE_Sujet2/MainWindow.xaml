@@ -33,7 +33,11 @@
             Click="butAjouter_Click"
             Content="Ajouter Affectation"
             FontFamily="72 Black"
-            FontSize="22" />
+            FontSize="22" >
+            <Button.Style>
+                <Style/>
+            </Button.Style>
+        </Button>
         <Button
             x:Name="butConsulter"
             Width="229"

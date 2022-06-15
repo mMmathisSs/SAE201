@@ -34,7 +34,7 @@ namespace SAE_Sujet2
 
             this.DataContext = this;
             //lvMission.ItemsSource = LesMissions;
-            lvMission.ItemsSource = ApplicationData.listeMissions;
+            lvMission.ItemsSource = ApplicationData.listeCorpsArmees;
         }
 
         private void butRetour_Click(object sender, RoutedEventArgs e)

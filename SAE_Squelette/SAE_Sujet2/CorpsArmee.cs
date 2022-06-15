@@ -5,47 +5,49 @@ using System.IO;
 
 namespace SAE_Squelette
 {
+    /// <summary>
+    /// Permet de créer et de stocker un corps d'armée avec comme information son id, son nom et une liste de division
+    /// </summary>
     public class CorpsArmee : ICRUD<CorpsArmee>
     {
-
         private int idCorpsArmee;
         private string nomCorpsArmee;
         private List<Division> lesDivisions = new List<Division>();
-        private static int numAuto = 0;
 
-        public CorpsArmee(string nomCorpsArmee, List<Division> lesDivisions)
+        /// <summary>
+        /// Constructeur de CoprpsArmee avec tous les paramètres
+        /// </summary>
+        /// <param name="idCorpsArmee"></param>
+        /// <param name="nomCorpsArmee"></param>
+        /// <param name="lesDivisions"></param>
+        public CorpsArmee(int idCorpsArmee, string nomCorpsArmee, List<Division> lesDivisions)
         {
-            NumAuto++;
-            this.IdCorpsArmee = NumAuto;
+            this.IdCorpsArmee = idCorpsArmee;
             this.NomCorpsArmee = nomCorpsArmee;
             this.LesDivisions = lesDivisions;
         }
 
-        public CorpsArmee(string nomCorpsArmee)
+        /// <summary>
+        /// Constructeur de CorpsArmee sans liste
+        /// </summary>
+        /// <param name="idCorpsArmee"></param>
+        /// <param name="nomCorpsArmee"></param>
+        public CorpsArmee(int idCorpsArmee, string nomCorpsArmee)
         {
-            NumAuto++;
-            this.IdCorpsArmee = NumAuto;
+            this.IdCorpsArmee = idCorpsArmee;
             this.NomCorpsArmee = nomCorpsArmee;
-            this.LesDivisions = lesDivisions;
         }
 
+        /// <summary>
+        /// Constructeur vide de CorpsArmee
+        /// </summary>
         public CorpsArmee()
         {
         }
 
-        public static int NumAuto
-        {
-            get
-            {
-                return numAuto;
-            }
-
-            private set
-            {
-                numAuto = value;
-            }
-        }
-
+        /// <summary>
+        /// Propriété de l'id du corps d'armée
+        /// </summary>
         public int IdCorpsArmee
         {
             get
@@ -66,6 +68,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété du nom du corps d'armée
+        /// </summary>
         public string NomCorpsArmee
         {
             get
@@ -79,6 +84,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété de la liste de divisions
+        /// </summary>
         public List<Division> LesDivisions
         {
             get
@@ -92,28 +100,42 @@ namespace SAE_Squelette
             }
         }
 
-        public CorpsArmee(object nomCorpsArmee)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-
-
+        /// <summary>
+        /// Méthode pour supprimer un corps d'armée
+        /// </summary>
         public void Delete()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour mettre à jour un corps d'armée
+        /// </summary>
         public void Update()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour lire un corps d'armée
+        /// </summary>
         public void Read()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour créer un corps d'armée
+        /// </summary>
         public void Create()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour extraire les corps d'armée d'une BD
+        /// </summary>
+        /// <returns></returns>
         public List<CorpsArmee> FindAll()
         {
             List<CorpsArmee> listeCorpsArmee = new List<CorpsArmee>();
@@ -148,6 +170,12 @@ namespace SAE_Squelette
             }
             return listeCorpsArmee;
         }
+
+        /// <summary>
+        /// Méthode pour extraire les corps d'armée d'une BD en appliquant un filtre
+        /// </summary>
+        /// <param name="criteres"></param>
+        /// <returns></returns>
         public List<CorpsArmee> FindBySelection(string criteres)
         {
             throw new NotImplementedException();
