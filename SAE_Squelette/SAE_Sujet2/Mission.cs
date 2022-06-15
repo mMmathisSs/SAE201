@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
     /// <summary>
     /// Permet de créer et de stocker une mission avec comme information son id, l'id de la division auquelle elle appartient, 

@@ -2,7 +2,7 @@ using System;
 using System.Data.SqlClient;
 using System.Windows;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
     /// <summary>
     /// Permet d'accéder à la base de données.

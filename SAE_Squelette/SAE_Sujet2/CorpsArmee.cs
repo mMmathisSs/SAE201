@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
     /// <summary>
     /// Permet de créer et de stocker un corps d'armée avec comme information son id, son nom et une liste de division
