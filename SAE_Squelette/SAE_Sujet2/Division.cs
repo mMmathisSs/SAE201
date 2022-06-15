@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 namespace SAE_Squelette
 {
     /// <summary>
-    /// Permet de créer et de stocker une division avec comme information son id l'id du corps d'armée auquel il appartient, 
+    /// Permet de créer et de stocker une division avec comme information son id, l'id du corps d'armée auquel il appartient, 
     /// son libellé et une liste de mission
     /// </summary>
     public class Division : ICRUD<Division>
