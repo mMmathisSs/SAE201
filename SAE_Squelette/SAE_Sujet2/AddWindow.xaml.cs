@@ -20,16 +20,33 @@ namespace SAE_Sujet2
         public AddWindow()
         {
             InitializeComponent();
+            ApplicationData.loadApplicationData();
+            cbDivision.ItemsSource = ApplicationData.listeDivisions;
+            this.DataContext = this;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void cbDivision_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Add_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+            DateTime? selectedDate = dpicker.SelectedDate;
+            string formatted = selectedDate.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            Mission addMission = new Mission(1, ((Division)cbDivision.SelectedItem).IdDivision, MissionBox.Text, DateTime.Parse(formatted), tbAdd.Text);
+            addMission.Create();
+            this.Close();
+            
         }
     }
 }

@@ -2,55 +2,62 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
+    /// <summary>
+    /// Permet de créer et de stocker une mission avec comme information son id, l'id de la division auquelle elle appartient, 
+    /// son libellé, sa date et un commentaire
+    /// </summary>
     public class Mission : ICRUD<Mission>
     {
 
-        private int idMission;
-        private int idDivision;
+        private long idMission;
+        private long idDivision;
         private string libelleMission;
         private DateTime dateAffectation;
         private string commentaire;
-        private static int numAuto = 0;
 
-        public Mission()
+        /// <summary>
+        /// Constructeur de Mission avec tous les paramètres 
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="libelleMission"></param>
+        /// <param name="dateAffectation"></param>
+        /// <param name="commentaire"></param>
+        public Mission(long idMission, long idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
         {
-        }
-
-        public Mission(int idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
-        {
-            NumAuto++;
-            this.IdMission = NumAuto;
+            this.IdMission = idMission;
             this.IdDivision = idDivision;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
             this.Commentaire = commentaire;
         }
 
-        public Mission(int idDivision, string libelleMission, DateTime dateAffectation)
+        /// <summary>
+        /// Constructeur de Mission sans commentaire
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="libelleMission"></param>
+        /// <param name="dateAffectation"></param>
+        public Mission(long idMission ,long idDivision, string libelleMission, DateTime dateAffectation)
         {
-            NumAuto++;
-            this.IdMission = NumAuto;
+            this.IdMission = idMission;
             this.IdDivision = idDivision;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
         }
 
-        public static int NumAuto
+        /// <summary>
+        /// Constructeur vide de Mission
+        /// </summary>
+        public Mission()
         {
-            get
-            {
-                return numAuto;
-            }
-
-            private set
-            {
-                numAuto = value;
-            }
         }
 
-        public int IdMission
+        /// <summary>
+        /// Propriété de l'id de la mission
+        /// </summary>
+        public long IdMission
         {
             get
             {
@@ -70,7 +77,10 @@ namespace SAE_Squelette
             }
         }
 
-        public int IdDivision
+        /// <summary>
+        /// Propriété de l'id de la division
+        /// </summary>
+        public long IdDivision
         {
             get
             {
@@ -90,6 +100,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété du libellé de la mission
+        /// </summary>
         public string LibelleMission
         {
             get
@@ -103,6 +116,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété de la date d'affectation de la mission
+        /// </summary>
         public DateTime DateAffectation
         {
             get
@@ -116,6 +132,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Proporiété du commentaire de la mission
+        /// </summary>
         public string Commentaire
         {
             get
@@ -132,31 +151,125 @@ namespace SAE_Squelette
             }
         }
 
-        public Mission(object libelleMission, object dateAffectation)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-        public Mission(object libelleMission)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-
+        /// <summary>
+        /// Méthode pour supprimer une mission
+        /// </summary>
         public void Delete()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"delete from [iut-acy\\claviozm].MISSION where IDMISSION = '{this.IdMission}';" +
+                        $"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
+
+        /// <summary>
+        /// Méthode pour mettre à jour une mission
+        /// </summary>
         public void Update()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"UPDATE [iut-acy\\claviozm].MISSION SET LIBELLEMISSION = '{this.LibelleMission}' " +
+                        $"WHERE IDMISSION ={this.IdMission};" +
+                        $"UPDATE [iut-acy\\claviozm].EFFECTUE2 SET DATEAFFECT = '{this.DateAffectation}', COMMENTAIRE = '{this.Commentaire}' " +
+                        $"WHERE IDMISSION ={this.IdMission};"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
+
+        /// <summary>
+        /// Méthode pour lire une mission
+        /// </summary>
         public void Read()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData("select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION;"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
+
+        /// <summary>
+        /// Méthode pour créer un  mission
+        /// </summary>
         public void Create()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"INSERT INTO [iut-acy\\claviozm].MISSION (LIBELLEMISSION) VALUES('{this.LibelleMission}');" +
+                        "DECLARE @IDMISSION as bigint;" +
+                        "SET @IDMISSION = SCOPE_IDENTITY();" +
+                        $"INSERT INTO [iut-acy\\claviozm].EFFECTUE2 (IDMISSION, IDDIVISION, DATEAFFECT, COMMENTAIRE) VALUES(@IDMISSION, '{this.IdDivision}','{this.DateAffectation}', '{this.Commentaire}')"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
+
+        /// <summary>
+        /// Méthode pour extraire les missions d'une BD
+        /// </summary>
+        /// <returns></returns>
         public List<Mission> FindAll()
         {
             List<Mission> listeMissions = new List<Mission>();
@@ -166,7 +279,51 @@ namespace SAE_Squelette
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION;");
+                    reader = access.GetData("select e.*, LIBELLEMISSION from [IUT-ACY\\claviozm].[EFFECTUE2] e join [IUT-ACY\\claviozm].[MISSION] m on e.IDMISSION = m.IDMISSION;");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Mission uneMission = new Mission();
+                            uneMission.IdMission = reader.GetInt64(0);
+                            uneMission.IdDivision = reader.GetInt64(1);
+                            uneMission.DateAffectation = reader.GetDateTime(2);
+                            uneMission.Commentaire = null;
+                            uneMission.LibelleMission = reader.GetString(4);
+                            listeMissions.Add(uneMission);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    reader.Close();
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+            return listeMissions;
+        }
+
+        /// <summary>
+        /// Méthode pour extraire les missions d'une BD avec un filtre
+        /// </summary>
+        /// <param name="criteres"></param>
+        /// <returns></returns>
+        public List<Mission> FindBySelection(string criteres)
+        {
+            List<Mission> listeMissions = new List<Mission>();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    reader = access.GetData($"select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION" +
+                        $"where m.LIBELLEMISSION = {this.LibelleMission};");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
@@ -193,10 +350,6 @@ namespace SAE_Squelette
                 System.Windows.MessageBox.Show(ex.Message, "Important Message");
             }
             return listeMissions;
-        }
-        public List<Mission> FindBySelection(string criteres)
-        {
-            throw new NotImplementedException();
         }
     }
 }

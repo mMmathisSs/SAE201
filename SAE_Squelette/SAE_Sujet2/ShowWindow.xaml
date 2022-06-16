@@ -8,18 +8,21 @@
     Title="ShowWindow"
     Width="800"
     Height="450"
+    Icon="/star.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" 
-    Icon="/star.png">
+    mc:Ignorable="d">
     <Window.Resources>
         <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
         <DataTemplate x:Key="caseACocher">
             <StackPanel Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" />
+                <CheckBox Click="CheckBox_Click" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" />
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
+    <Window.DataContext>
+        <local:ApplicationData />
+    </Window.DataContext>
     <Grid>
         <DataGrid
             x:Name="dgSalarie"
@@ -27,7 +30,7 @@
             Margin="0,217,0,84"
             HorizontalAlignment="Center"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding LesMissions}">
+            ItemsSource="{Binding listeMissions}">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="*"
@@ -48,20 +51,40 @@
             </DataGrid.Columns>
         </DataGrid>
         <ListView
-            x:Name="lvMission"
+            x:Name="lvCorpsArmee"
             Width="195"
             Height="197"
             Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            BorderBrush="Black">
+            BorderBrush="Black"
+            ItemsSource="{Binding listeCorpsArmees}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
                     <GridViewColumn
                         Width="150"
-                        DisplayMemberBinding="{Binding LibelleMission}"
-                        Header="Missions" />
+                        DisplayMemberBinding="{Binding NomCorpsArmee}"
+                        Header="Corps Armées" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView
+            x:Name="lvDivision"
+            Width="195"
+            Height="197"
+            Margin="291,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="Black"
+            ItemsSource="{Binding listeDivisions}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
+                    <GridViewColumn
+                        Width="150"
+                        DisplayMemberBinding="{Binding LibelleDivision}"
+                        Header="Divisions" />
                 </GridView>
             </ListView.View>
         </ListView>

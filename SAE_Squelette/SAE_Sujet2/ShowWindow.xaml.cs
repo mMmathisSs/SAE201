@@ -1,5 +1,4 @@
-﻿using SAE_Squelette;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -19,27 +18,70 @@ namespace SAE_Sujet2
     /// </summary>
     public partial class ShowWindow : Window
     {
-        public ObservableCollection<Mission> LesMissions { get; set; }
-       
-
         public ShowWindow()
         {
             InitializeComponent();
-            /*LesMissions = new ObservableCollection<Mission>();
-            LesMissions.Add(new Mission("Mission 1", new DateTime(2015, 02, 01), "Mission difficile"));
-            LesMissions.Add(new Mission("Mission 2", new DateTime(2017, 09, 01)));
-            LesMissions.Add(new Mission("Mission 3", new DateTime(2020, 08, 01)));
-            LesMissions.Add(new Mission("Mission 4", new DateTime(2020, 11, 01)));
-            LesMissions.Add(new Mission("Mission 5", new DateTime(2021, 07, 01)));*/
+            ApplicationData.loadApplicationData();
+
+            lvCorpsArmee.ItemsSource = ApplicationData.listeCorpsArmees;
+            lvDivision.ItemsSource = ApplicationData.listeDivisions;
+            dgSalarie.ItemsSource = ApplicationData.listeMissions;
 
             this.DataContext = this;
-            //lvMission.ItemsSource = LesMissions;
-            lvMission.ItemsSource = ApplicationData.listeMissions;
         }
 
         private void butRetour_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.lvCorpsArmee.SelectedItem != null)
+            {
+                List<Mission> temp = new List<Mission>();
+                List<Division> temp2 = new List<Division>();
+                foreach (Division uneDivision in ApplicationData.listeDivisions)
+                {
+                    foreach (Mission uneMission in ApplicationData.listeMissions)
+                    {
+                        if ((((CorpsArmee)this.lvCorpsArmee.SelectedItem).IdCorpsArmee) == uneDivision.IdCorpsArmee && uneDivision.IdDivision == uneMission.IdDivision)
+                        {
+                            int compteur = 0;
+                            temp.Add(uneMission);
+                            foreach (Division truc in temp2)
+                            {
+                                if (truc == uneDivision)
+                                    compteur++;
+                            }
+                            if (compteur == 0)
+                                temp2.Add(uneDivision);
+                        }
+                    }
+                }
+                lvDivision.ItemsSource = temp2;
+                dgSalarie.ItemsSource = temp;
+            }
+
+            if (this.lvDivision.SelectedItem != null)
+            {
+                List<Mission> temp = new List<Mission>();
+                foreach (CorpsArmee unCorpsArmee in ApplicationData.listeCorpsArmees)
+                {
+                    foreach (Mission uneMission in ApplicationData.listeMissions)
+                    {
+                        if (unCorpsArmee.IdCorpsArmee == (((Division)this.lvDivision.SelectedItem).IdCorpsArmee) && (((Division)this.lvDivision.SelectedItem).IdDivision) == uneMission.IdDivision)
+                            temp.Add(uneMission);
+                    }
+                }
+                dgSalarie.ItemsSource = temp;
+            }
+
+            if (this.lvCorpsArmee.SelectedItem is null && this.lvDivision.SelectedItem is null)
+            {
+                lvDivision.ItemsSource = ApplicationData.listeDivisions;
+                dgSalarie.ItemsSource = ApplicationData.listeMissions;
+            }
         }
     }
 }
