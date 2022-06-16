@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
 	/// <summary>
 	/// Permet d'implémenter le CRUD dans les différentes classes

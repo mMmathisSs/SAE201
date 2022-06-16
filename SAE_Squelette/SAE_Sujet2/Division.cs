@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
     /// <summary>
     /// Permet de créer et de stocker une division avec comme information son id, l'id du corps d'armée auquel il appartient, 

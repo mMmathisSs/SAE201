@@ -54,7 +54,7 @@
             Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            BorderBrush="Black" SelectionChanged="lvMission_SelectionChanged">
+            BorderBrush="Black">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
