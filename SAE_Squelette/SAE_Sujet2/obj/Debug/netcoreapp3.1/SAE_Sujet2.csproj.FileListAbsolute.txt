@@ -137,3 +137,4 @@ P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.Assemb
 P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.csproj.CoreCompileInputs.cache
 P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.csproj.CopyComplete
 P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.genruntimeconfig.cache
+C:\Users\mathi\OneDrive\IUT\SAE201\SAE_Squelette\SAE_Sujet2\bin\Debug\netcoreapp3.1\Images\star.png
