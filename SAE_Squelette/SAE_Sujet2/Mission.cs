@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace SAE_Squelette
+namespace SAE_Sujet2
 {
+    /// <summary>
+    /// Permet de créer et de stocker une mission avec comme information son id, l'id de la division auquelle elle appartient, 
+    /// son libellé, sa date et un commentaire
+    /// </summary>
     public class Mission : ICRUD<Mission>
     {
 
@@ -12,53 +16,47 @@ namespace SAE_Squelette
         private string libelleMission;
         private DateTime dateAffectation;
         private string commentaire;
-        private static int numAuto = 0;
 
-        public Mission()
+        /// <summary>
+        /// Constructeur de Mission avec tous les paramètres 
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="libelleMission"></param>
+        /// <param name="dateAffectation"></param>
+        /// <param name="commentaire"></param>
+        public Mission(int idMission, int idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
         {
-        }
-
-        public Mission(int idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
-        {
-            NumAuto++;
-            this.IdMission = NumAuto;
+            this.IdMission = idMission;
             this.IdDivision = idDivision;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
             this.Commentaire = commentaire;
         }
 
-        public Mission(string libelleMission, DateTime dateAffectation, string commentaire)
+        /// <summary>
+        /// Constructeur de Mission sans commentaire
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="libelleMission"></param>
+        /// <param name="dateAffectation"></param>
+        public Mission(int idMission ,int idDivision, string libelleMission, DateTime dateAffectation)
         {
-            NumAuto++;
-            this.IdMission = NumAuto;
+            this.IdMission = idMission;
+            this.IdDivision = idDivision;
             this.LibelleMission = libelleMission;
             this.DateAffectation = dateAffectation;
-            this.Commentaire = commentaire;
         }
 
-        public Mission(string libelleMission, DateTime dateAffectation)
+        /// <summary>
+        /// Constructeur vide de Mission
+        /// </summary>
+        public Mission()
         {
-            NumAuto++;
-            this.IdMission = NumAuto;
-            this.LibelleMission = libelleMission;
-            this.DateAffectation = dateAffectation;
-            this.Commentaire = null;
         }
 
-        public static int NumAuto
-        {
-            get
-            {
-                return numAuto;
-            }
-
-            private set
-            {
-                numAuto = value;
-            }
-        }
-
+        /// <summary>
+        /// Propriété de l'id de la mission
+        /// </summary>
         public int IdMission
         {
             get
@@ -68,10 +66,20 @@ namespace SAE_Squelette
 
             set
             {
-                this.idMission = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("idmission < 0");
+                }
+                else
+                {
+                    this.idMission = value;
+                }
             }
         }
 
+        /// <summary>
+        /// Propriété de l'id de la division
+        /// </summary>
         public int IdDivision
         {
             get
@@ -81,10 +89,20 @@ namespace SAE_Squelette
 
             set
             {
-                this.idDivision = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("iddivision < 0");
+                }
+                else
+                {
+                    this.idDivision = value;
+                }
             }
         }
 
+        /// <summary>
+        /// Propriété du libellé de la mission
+        /// </summary>
         public string LibelleMission
         {
             get
@@ -98,6 +116,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Propriété de la date d'affectation de la mission
+        /// </summary>
         public DateTime DateAffectation
         {
             get
@@ -111,6 +132,9 @@ namespace SAE_Squelette
             }
         }
 
+        /// <summary>
+        /// Proporiété du commentaire de la mission
+        /// </summary>
         public string Commentaire
         {
             get
@@ -127,31 +151,42 @@ namespace SAE_Squelette
             }
         }
 
-        public Mission(object libelleMission, object dateAffectation)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-        public Mission(object libelleMission)
-        {
-            throw new System.NotImplementedException("Not implemented");
-        }
-
+        /// <summary>
+        /// Méthode pour supprimer une mission
+        /// </summary>
         public void Delete()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour mettre à jour une mission
+        /// </summary>
         public void Update()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour lire une mission
+        /// </summary>
         public void Read()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour créer un  mission
+        /// </summary>
         public void Create()
         {
             throw new System.NotImplementedException("Not implemented");
         }
+
+        /// <summary>
+        /// Méthode pour extraire les missions d'une BD
+        /// </summary>
+        /// <returns></returns>
         public List<Mission> FindAll()
         {
             List<Mission> listeMissions = new List<Mission>();
@@ -189,6 +224,12 @@ namespace SAE_Squelette
             }
             return listeMissions;
         }
+
+        /// <summary>
+        /// Méthode pour extraire les missions d'une BD avec un filtre
+        /// </summary>
+        /// <param name="criteres"></param>
+        /// <returns></returns>
         public List<Mission> FindBySelection(string criteres)
         {
             throw new NotImplementedException();

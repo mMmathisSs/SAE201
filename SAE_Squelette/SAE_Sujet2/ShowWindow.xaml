@@ -8,10 +8,10 @@
     Title="ShowWindow"
     Width="800"
     Height="450"
-    Icon="/star.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d" 
+    Icon="/star.png">
     <Window.Resources>
         <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
         <DataTemplate x:Key="caseACocher">
