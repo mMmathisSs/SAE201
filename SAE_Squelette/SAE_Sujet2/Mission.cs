@@ -156,7 +156,27 @@ namespace SAE_Sujet2
         /// </summary>
         public void Delete()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"delete from [iut-acy\\claviozm].MISSION where IDMISSION = '{this.IdMission}';" +
+                        $"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -164,7 +184,29 @@ namespace SAE_Sujet2
         /// </summary>
         public void Update()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"UPDATE [iut-acy\\claviozm].MISSION SET LIBELLEMISSION = '{this.LibelleMission}' " +
+                        $"WHERE IDMISSION ={this.IdMission};" +
+                        $"UPDATE [iut-acy\\claviozm].EFFECTUE2 SET DATEAFFECT = '{this.DateAffectation}', COMMENTAIRE = '{this.Commentaire}' " +
+                        $"WHERE IDMISSION ={this.IdMission};"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -172,7 +214,26 @@ namespace SAE_Sujet2
         /// </summary>
         public void Read()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData("select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION;"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -180,7 +241,27 @@ namespace SAE_Sujet2
         /// </summary>
         public void Create()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"INSERT INTO [iut-acy\\claviozm].MISSION (LIBELLEMISSION) VALUES('{this.LibelleMission}');" +
+                        $"INSERT INTO [iut-acy\\claviozm].EFFECTUE2 (DATEAFFECT, COMMENTAIRE) VALUES('{this.DateAffectation}', '{this.Commentaire}')"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -232,7 +313,41 @@ namespace SAE_Sujet2
         /// <returns></returns>
         public List<Mission> FindBySelection(string criteres)
         {
-            throw new NotImplementedException();
+            List<Mission> listeMissions = new List<Mission>();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    reader = access.GetData($"select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION" +
+                        $"where m.LIBELLEMISSION = {this.LibelleMission};");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Mission uneMission = new Mission();
+                            uneMission.IdMission = reader.GetInt32(0);
+                            uneMission.IdDivision = reader.GetInt32(1);
+                            uneMission.DateAffectation = reader.GetDateTime(2);
+                            uneMission.Commentaire = reader.GetString(3);
+                            uneMission.LibelleMission = reader.GetString(4);
+                            listeMissions.Add(uneMission);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    reader.Close();
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+            return listeMissions;
         }
     }
 }
