@@ -11,8 +11,8 @@ namespace SAE_Sujet2
     public class Mission : ICRUD<Mission>
     {
 
-        private int idMission;
-        private int idDivision;
+        private long idMission;
+        private long idDivision;
         private string libelleMission;
         private DateTime dateAffectation;
         private string commentaire;
@@ -24,7 +24,7 @@ namespace SAE_Sujet2
         /// <param name="libelleMission"></param>
         /// <param name="dateAffectation"></param>
         /// <param name="commentaire"></param>
-        public Mission(int idMission, int idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
+        public Mission(long idMission, long idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
         {
             this.IdMission = idMission;
             this.IdDivision = idDivision;
@@ -39,7 +39,7 @@ namespace SAE_Sujet2
         /// <param name="idDivision"></param>
         /// <param name="libelleMission"></param>
         /// <param name="dateAffectation"></param>
-        public Mission(int idMission ,int idDivision, string libelleMission, DateTime dateAffectation)
+        public Mission(long idMission ,long idDivision, string libelleMission, DateTime dateAffectation)
         {
             this.IdMission = idMission;
             this.IdDivision = idDivision;
@@ -57,7 +57,7 @@ namespace SAE_Sujet2
         /// <summary>
         /// Propriété de l'id de la mission
         /// </summary>
-        public int IdMission
+        public long IdMission
         {
             get
             {
@@ -80,7 +80,7 @@ namespace SAE_Sujet2
         /// <summary>
         /// Propriété de l'id de la division
         /// </summary>
-        public int IdDivision
+        public long IdDivision
         {
             get
             {
@@ -196,16 +196,16 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION;");
+                    reader = access.GetData("select e.*, LIBELLEMISSION from [IUT-ACY\\claviozm].[EFFECTUE2] e join [IUT-ACY\\claviozm].[MISSION] m on e.IDMISSION = m.IDMISSION;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Mission uneMission = new Mission();
-                            uneMission.IdMission = reader.GetInt32(0);
-                            uneMission.IdDivision = reader.GetInt32(1);
+                            uneMission.IdMission = reader.GetInt64(0);
+                            uneMission.IdDivision = reader.GetInt64(1);
                             uneMission.DateAffectation = reader.GetDateTime(2);
-                            uneMission.Commentaire = reader.GetString(3);
+                            uneMission.Commentaire = null;
                             uneMission.LibelleMission = reader.GetString(4);
                             listeMissions.Add(uneMission);
                         }

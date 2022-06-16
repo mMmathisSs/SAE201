@@ -10,7 +10,7 @@ namespace SAE_Sujet2
     /// </summary>
     public class CorpsArmee : ICRUD<CorpsArmee>
     {
-        private int idCorpsArmee;
+        private long idCorpsArmee;
         private string nomCorpsArmee;
         private List<Division> lesDivisions = new List<Division>();
 
@@ -20,7 +20,7 @@ namespace SAE_Sujet2
         /// <param name="idCorpsArmee"></param>
         /// <param name="nomCorpsArmee"></param>
         /// <param name="lesDivisions"></param>
-        public CorpsArmee(int idCorpsArmee, string nomCorpsArmee, List<Division> lesDivisions)
+        public CorpsArmee(long idCorpsArmee, string nomCorpsArmee, List<Division> lesDivisions)
         {
             this.IdCorpsArmee = idCorpsArmee;
             this.NomCorpsArmee = nomCorpsArmee;
@@ -32,7 +32,7 @@ namespace SAE_Sujet2
         /// </summary>
         /// <param name="idCorpsArmee"></param>
         /// <param name="nomCorpsArmee"></param>
-        public CorpsArmee(int idCorpsArmee, string nomCorpsArmee)
+        public CorpsArmee(long idCorpsArmee, string nomCorpsArmee)
         {
             this.IdCorpsArmee = idCorpsArmee;
             this.NomCorpsArmee = nomCorpsArmee;
@@ -48,7 +48,7 @@ namespace SAE_Sujet2
         /// <summary>
         /// Propriété de l'id du corps d'armée
         /// </summary>
-        public int IdCorpsArmee
+        public long IdCorpsArmee
         {
             get
             {
@@ -145,13 +145,13 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [iut-acy\\claviozm].CORPS_ARMEE;");
+                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[CORPS_ARMEE];");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             CorpsArmee unCorpsArmee = new CorpsArmee();
-                            unCorpsArmee.IdCorpsArmee = reader.GetInt32(0);
+                            unCorpsArmee.IdCorpsArmee = reader.GetInt64(0);
                             unCorpsArmee.NomCorpsArmee = reader.GetString(1);
                             listeCorpsArmee.Add(unCorpsArmee);
                         }

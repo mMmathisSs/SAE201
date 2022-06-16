@@ -1,1 +1,1 @@
-﻿select * from MISSION
+﻿select e.*, LIBELLEMISSION from [IUT-ACY\claviozm].[EFFECTUE2] e join [IUT-ACY\claviozm].[MISSION] m on e.IDMISSION = m.IDMISSION;

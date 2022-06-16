@@ -41,19 +41,13 @@ namespace SAE_Sujet2
         /// </summary>
         public static void loadApplicationData()
         {
-            //chargement des tables
             Mission uneMission = new Mission();
             Division uneDivision = new Division();
             CorpsArmee unCorpsArmee = new CorpsArmee();
-            //EstNote unEstNote = new EstNote();
+
             listeMissions = uneMission.FindAll();
             listeDivisions = uneDivision.FindAll();
             listeCorpsArmees = unCorpsArmee.FindAll();
-            //listeEstNotes = unEstNote.FindAll();
-            //mapping des relations en mode déconnecté
-            //relation bi-directionnelle entre eleve et groupe
-            //relation eleve -> note
-            //relation note -> professeur
         }
     }
 }

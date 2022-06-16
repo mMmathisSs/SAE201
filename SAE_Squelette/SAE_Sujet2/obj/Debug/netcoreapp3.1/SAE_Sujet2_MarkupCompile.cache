@@ -1,19 +1,19 @@
 ﻿SAE_Sujet2
 
 
-winexe
+exe
 C#
 .cs
-C:\Users\bella\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\
 SAE_Sujet2
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\bella\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
 3-2109024942
 
 111702793321
-193-2043086938
+193679817172
 AddWindow.xaml;MainWindow.xaml;ShowWindow.xaml;
 
 False

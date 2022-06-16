@@ -11,8 +11,8 @@ namespace SAE_Sujet2
     public class Division : ICRUD<Division>
     {
 
-        private int idDivision;
-        private int idCorpsArmee;
+        private long idDivision;
+        private long idCorpsArmee;
         private string libelleDivision;
         private List<Mission> lesMissions = new List<Mission>();
 
@@ -23,7 +23,7 @@ namespace SAE_Sujet2
         /// <param name="idCorpsArmee"></param>
         /// <param name="libelleDivision"></param>
         /// <param name="lesMissions"></param>
-        public Division(int idDivision, int idCorpsArmee, string libelleDivision, List<Mission> lesMissions)
+        public Division(long idDivision, long idCorpsArmee, string libelleDivision, List<Mission> lesMissions)
         {
             this.IdDivision = idDivision;
             this.IdCorpsArmee = idCorpsArmee;
@@ -37,7 +37,7 @@ namespace SAE_Sujet2
         /// <param name="idDivision"></param>
         /// <param name="libelleDivision"></param>
         /// <param name="lesMissions"></param>
-        public Division(int idDivision, string libelleDivision, List<Mission> lesMissions)
+        public Division(long idDivision, string libelleDivision, List<Mission> lesMissions)
         {
             this.IdDivision = idDivision;
             this.LibelleDivision = libelleDivision;
@@ -54,7 +54,7 @@ namespace SAE_Sujet2
         /// <summary>
         /// Propriété de l'id de la division
         /// </summary>
-        public int IdDivision
+        public long IdDivision
         {
             get
             {
@@ -77,7 +77,7 @@ namespace SAE_Sujet2
         /// <summary>
         /// Propriété de l'id du corps d'armée
         /// </summary>
-        public int IdCorpsArmee
+        public long IdCorpsArmee
         {
             get
             {
@@ -174,14 +174,14 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [iut-acy\\claviozm].DIVISON;");
+                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[DIVISON];");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Division uneDivision = new Division();
-                            uneDivision.IdDivision = reader.GetInt32(0);
-                            uneDivision.IdCorpsArmee = reader.GetInt32(1);
+                            uneDivision.IdDivision = reader.GetInt64(0);
+                            uneDivision.IdCorpsArmee = reader.GetInt64(1);
                             uneDivision.LibelleDivision = reader.GetString(2);
                             listeDivision.Add(uneDivision);
                         }
