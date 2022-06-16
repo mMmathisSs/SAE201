@@ -21,11 +21,14 @@ namespace SAE_Sujet2
         {
             InitializeComponent();
             ApplicationData.loadApplicationData();
+            cbMission.ItemsSource = ApplicationData.listeMissions;
+            cbDivision.ItemsSource = ApplicationData.listeDivisions;
+            this.DataContext = this;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

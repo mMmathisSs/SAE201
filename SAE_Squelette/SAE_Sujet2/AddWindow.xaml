@@ -12,9 +12,12 @@
     MinHeight="600"
     MaxWidth="450"
     MaxHeight="600"
+    Icon="/star.png"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" 
-    Icon="/star.png">
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ApplicationData />
+    </Window.DataContext>
     <Grid Width="450" Height="600">
         <Label
             Width="258"
@@ -37,10 +40,14 @@
             VerticalAlignment="Top"
             Content="Mission concernée :" />
         <ComboBox
+            x:Name="cbMission"
             Width="187"
             Margin="30,151,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            DisplayMemberPath="LibelleMission"
+            ItemsSource="{Binding}"
+            SelectedValuePath="IdMission" />
         <Label
             Width="158"
             Margin="30,195,0,0"
@@ -48,10 +55,14 @@
             VerticalAlignment="Top"
             Content="Division concernée :" />
         <ComboBox
+            x:Name="cbDivision"
             Width="187"
             Margin="30,226,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            DisplayMemberPath="LibelleDivision"
+            ItemsSource="{Binding}"
+            SelectedValuePath="IdDivision" />
         <Label
             Width="158"
             Margin="30,273,0,0"
