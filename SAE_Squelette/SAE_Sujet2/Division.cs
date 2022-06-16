@@ -138,7 +138,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    if (access.SetData($"delete from [iut-acy\\claviozm].DIVISON where IDDIVISION = '{this.IdDivision}';"))
+                    if (access.SetData($"delete from [iut-acy\\claviozm].DIVISION where IDDIVISION = '{this.IdDivision}';"))
                     {
 
                     }
@@ -165,7 +165,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    if (access.SetData($"UPDATE [iut-acy\\claviozm].DIVISON SET LIBELLEDIVISION = '{this.LibelleDivision}' " +
+                    if (access.SetData($"UPDATE [iut-acy\\claviozm].DIVISION SET LIBELLEDIVISION = '{this.LibelleDivision}' " +
                         $"WHERE IDDIVISION ={this.IdDivision};"))
                     {
 
@@ -193,7 +193,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    if (access.SetData("select * from [iut-acy\\claviozm].DIVISON;"))
+                    if (access.SetData("select * from [iut-acy\\claviozm].DIVISION;"))
                     {
 
                     }
@@ -220,7 +220,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    if (access.SetData($"INSERT INTO [iut-acy\\claviozm].DIVISON (LIBELLEDIVISION) VALUES('{this.LibelleDivision}');"))
+                    if (access.SetData($"INSERT INTO [iut-acy\\claviozm].DIVISION (LIBELLEDIVISION) VALUES('{this.LibelleDivision}');"))
                     {
 
                     }
@@ -250,7 +250,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[DIVISON];");
+                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[DIVISION];");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
@@ -291,7 +291,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData($"select * from [iut-acy\\claviozm].DIVISON where LIBELLEDIVISION = {this.LibelleDivision};");
+                    reader = access.GetData($"select * from [iut-acy\\claviozm].DIVISION where LIBELLEDIVISION = {this.LibelleDivision};");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

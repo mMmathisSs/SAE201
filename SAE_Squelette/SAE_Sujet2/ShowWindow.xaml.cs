@@ -24,6 +24,7 @@ namespace SAE_Sujet2
             ApplicationData.loadApplicationData();
 
             lvCorpsArmee.ItemsSource = ApplicationData.listeCorpsArmees;
+            lvDivision.ItemsSource = ApplicationData.listeDivisions;
             dgSalarie.ItemsSource = ApplicationData.listeMissions;
 
             this.DataContext = this;
@@ -39,18 +40,48 @@ namespace SAE_Sujet2
             if (this.lvCorpsArmee.SelectedItem != null)
             {
                 List<Mission> temp = new List<Mission>();
+                List<Division> temp2 = new List<Division>();
                 foreach (Division uneDivision in ApplicationData.listeDivisions)
                 {
                     foreach (Mission uneMission in ApplicationData.listeMissions)
                     {
                         if ((((CorpsArmee)this.lvCorpsArmee.SelectedItem).IdCorpsArmee) == uneDivision.IdCorpsArmee && uneDivision.IdDivision == uneMission.IdDivision)
+                        {
+                            int compteur = 0;
+                            temp.Add(uneMission);
+                            foreach (Division truc in temp2)
+                            {
+                                if (truc == uneDivision)
+                                    compteur++;
+                            }
+                            if (compteur == 0)
+                                temp2.Add(uneDivision);
+                        }
+                    }
+                }
+                lvDivision.ItemsSource = temp2;
+                dgSalarie.ItemsSource = temp;
+            }
+
+            if (this.lvDivision.SelectedItem != null)
+            {
+                List<Mission> temp = new List<Mission>();
+                foreach (CorpsArmee unCorpsArmee in ApplicationData.listeCorpsArmees)
+                {
+                    foreach (Mission uneMission in ApplicationData.listeMissions)
+                    {
+                        if (unCorpsArmee.IdCorpsArmee == (((Division)this.lvDivision.SelectedItem).IdCorpsArmee) && (((Division)this.lvDivision.SelectedItem).IdDivision) == uneMission.IdDivision)
                             temp.Add(uneMission);
                     }
                 }
                 dgSalarie.ItemsSource = temp;
             }
-            if (this.lvCorpsArmee.SelectedItem is null)
+
+            if (this.lvCorpsArmee.SelectedItem is null && this.lvDivision.SelectedItem is null)
+            {
+                lvDivision.ItemsSource = ApplicationData.listeDivisions;
                 dgSalarie.ItemsSource = ApplicationData.listeMissions;
+            }
         }
     }
 }
