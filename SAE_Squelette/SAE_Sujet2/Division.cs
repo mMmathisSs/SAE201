@@ -10,7 +10,6 @@ namespace SAE_Squelette
     /// </summary>
     public class Division : ICRUD<Division>
     {
-
         private int idDivision;
         private int idCorpsArmee;
         private string libelleDivision;
