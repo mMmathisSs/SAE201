@@ -45,6 +45,7 @@ namespace SAE_Sujet2
             string formatted = selectedDate.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             Mission addMission = new Mission(1, ((Division)cbDivision.SelectedItem).IdDivision, MissionBox.Text, DateTime.Parse(formatted), tbAdd.Text);
             addMission.Create();
+            this.Close();
             
         }
     }

@@ -247,7 +247,9 @@ namespace SAE_Sujet2
                 if (access.OpenConnection())
                 {
                     if (access.SetData($"INSERT INTO [iut-acy\\claviozm].MISSION (LIBELLEMISSION) VALUES('{this.LibelleMission}');" +
-                        $"INSERT INTO [iut-acy\\claviozm].EFFECTUE2 (IDDIVISION, DATEAFFECT, COMMENTAIRE) VALUES('{this.IdDivision}','{this.DateAffectation}', '{this.Commentaire}')"))
+                        "DECLARE @IDMISSION as bigint;" +
+                        "SET @IDMISSION = SCOPE_IDENTITY();" +
+                        $"INSERT INTO [iut-acy\\claviozm].EFFECTUE2 (IDMISSION, IDDIVISION, DATEAFFECT, COMMENTAIRE) VALUES(@IDMISSION, '{this.IdDivision}','{this.DateAffectation}', '{this.Commentaire}')"))
                     {
 
                     }
