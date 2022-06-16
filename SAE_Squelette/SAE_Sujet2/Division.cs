@@ -133,7 +133,26 @@ namespace SAE_Sujet2
         /// </summary>
         public void Delete()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"delete from [iut-acy\\claviozm].DIVISON where IDDIVISION = '{this.IdDivision}';"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -141,7 +160,27 @@ namespace SAE_Sujet2
         /// </summary>
         public void Update()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"UPDATE [iut-acy\\claviozm].DIVISON SET LIBELLEDIVISION = '{this.LibelleDivision}' " +
+                        $"WHERE IDDIVISION ={this.IdDivision};"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -149,7 +188,26 @@ namespace SAE_Sujet2
         /// </summary>
         public void Read()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData("select * from [iut-acy\\claviozm].DIVISON;"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -157,7 +215,26 @@ namespace SAE_Sujet2
         /// </summary>
         public void Create()
         {
-            throw new System.NotImplementedException("Not implemented");
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"INSERT INTO [iut-acy\\claviozm].DIVISON (LIBELLEDIVISION) VALUES('{this.LibelleDivision}');"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         /// <summary>
@@ -207,7 +284,38 @@ namespace SAE_Sujet2
         /// <returns></returns>
         public List<Division> FindBySelection(string criteres)
         {
-            throw new NotImplementedException();
+            List<Division> listeDivision = new List<Division>();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    reader = access.GetData($"select * from [iut-acy\\claviozm].DIVISON where LIBELLEDIVISION = {this.LibelleDivision};");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Division uneDivision = new Division();
+                            uneDivision.IdDivision = reader.GetInt32(0);
+                            uneDivision.IdCorpsArmee = reader.GetInt32(1);
+                            uneDivision.LibelleDivision = reader.GetString(2);
+                            listeDivision.Add(uneDivision);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    reader.Close();
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+            return listeDivision;
         }
     }
 }
