@@ -174,7 +174,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[DIVISON];");
+                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[DIVISION];");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

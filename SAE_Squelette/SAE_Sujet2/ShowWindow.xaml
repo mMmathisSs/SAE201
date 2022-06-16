@@ -16,7 +16,7 @@
         <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
         <DataTemplate x:Key="caseACocher">
             <StackPanel Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" />
+                <CheckBox Click="CheckBox_Click" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" />
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
@@ -51,7 +51,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <ListView
-            x:Name="lvMission"
+            x:Name="lvCorpsArmee"
             Width="195"
             Height="197"
             Margin="10,10,0,0"

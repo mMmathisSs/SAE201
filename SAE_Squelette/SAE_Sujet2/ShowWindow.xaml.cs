@@ -23,7 +23,7 @@ namespace SAE_Sujet2
             InitializeComponent();
             ApplicationData.loadApplicationData();
 
-            lvMission.ItemsSource = ApplicationData.listeCorpsArmees;
+            lvCorpsArmee.ItemsSource = ApplicationData.listeCorpsArmees;
             dgSalarie.ItemsSource = ApplicationData.listeMissions;
 
             this.DataContext = this;
@@ -32,6 +32,25 @@ namespace SAE_Sujet2
         private void butRetour_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.lvCorpsArmee.SelectedItem != null)
+            {
+                List<Mission> temp = new List<Mission>();
+                foreach (Division uneDivision in ApplicationData.listeDivisions)
+                {
+                    foreach (Mission uneMission in ApplicationData.listeMissions)
+                    {
+                        if ((((CorpsArmee)this.lvCorpsArmee.SelectedItem).IdCorpsArmee) == uneDivision.IdCorpsArmee && uneDivision.IdDivision == uneMission.IdDivision)
+                            temp.Add(uneMission);
+                    }
+                }
+                dgSalarie.ItemsSource = temp;
+            }
+            if (this.lvCorpsArmee.SelectedItem is null)
+                dgSalarie.ItemsSource = ApplicationData.listeMissions;
         }
     }
 }
