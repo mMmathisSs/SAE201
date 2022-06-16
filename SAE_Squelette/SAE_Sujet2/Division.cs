@@ -250,7 +250,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [iut-acy\\claviozm].DIVISON;");
+                    reader = access.GetData("select * from [iut-acy\\claviozm].DIVISION;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

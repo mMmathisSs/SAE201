@@ -38,16 +38,7 @@
             Margin="30,120,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Mission concernée :" />
-        <ComboBox
-            x:Name="cbMission"
-            Width="187"
-            Margin="30,151,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            DisplayMemberPath="LibelleMission"
-            ItemsSource="{Binding}"
-            SelectedValuePath="IdMission" />
+            Content="Nom de la mission :" />
         <Label
             Width="158"
             Margin="30,195,0,0"
@@ -62,14 +53,15 @@
             VerticalAlignment="Top"
             DisplayMemberPath="LibelleDivision"
             ItemsSource="{Binding}"
-            SelectedValuePath="IdDivision" />
+            SelectedValuePath="IdDivision"
+            SelectionChanged="cbDivision_SelectionChanged" />
         <Label
             Width="158"
             Margin="30,273,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Date affectation :" />
-        <DatePicker Margin="22,304,233,268" />
+        <DatePicker x:Name="dpicker" Margin="22,304,233,268" />
         <Label
             Width="187"
             Margin="30,365,0,0"
@@ -77,6 +69,7 @@
             VerticalAlignment="Top"
             Content="Commentaire  :" />
         <TextBox
+            x:Name="tbAdd"
             Width="332"
             Height="87"
             Margin="22,396,0,0"
@@ -84,11 +77,13 @@
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Button
+            x:Name="button_Add"
             Width="126"
             Height="42"
             Margin="250,512,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="button_Add_Click"
             Content="Ajouter"
             FontWeight="Bold" />
         <Button
@@ -99,6 +94,14 @@
             VerticalAlignment="Top"
             Click="Button_Click"
             Content="Annuler" />
+        <TextBox
+            x:Name="MissionBox"
+            Width="187"
+            Height="23"
+            Margin="30,146,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
 
     </Grid>
 </Window>
