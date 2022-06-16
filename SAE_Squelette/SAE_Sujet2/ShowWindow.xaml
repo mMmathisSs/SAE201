@@ -8,10 +8,10 @@
     Title="ShowWindow"
     Width="800"
     Height="450"
+    Icon="/star.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" 
-    Icon="/star.png">
+    mc:Ignorable="d">
     <Window.Resources>
         <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
         <DataTemplate x:Key="caseACocher">
@@ -20,6 +20,9 @@
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
+    <Window.DataContext>
+        <local:ApplicationData />
+    </Window.DataContext>
     <Grid>
         <DataGrid
             x:Name="dgSalarie"
@@ -27,7 +30,7 @@
             Margin="0,217,0,84"
             HorizontalAlignment="Center"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding LesMissions}">
+            ItemsSource="{Binding listeMissions}">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="*"
@@ -54,13 +57,14 @@
             Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            BorderBrush="Black">
+            BorderBrush="Black"
+            ItemsSource="{Binding listeCorpsArmees}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
                     <GridViewColumn
                         Width="150"
-                        DisplayMemberBinding="{Binding LibelleMission}"
+                        DisplayMemberBinding="{Binding NomCorpsArmee}"
                         Header="Missions" />
                 </GridView>
             </ListView.View>

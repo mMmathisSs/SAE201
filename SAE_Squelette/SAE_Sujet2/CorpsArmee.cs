@@ -222,7 +222,7 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData("select * from [iut-acy\\claviozm].CORPS_ARMEE;");
+                    reader = access.GetData("select * from [IUT-ACY\\claviozm].[CORPS_ARMEE];");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

@@ -20,6 +20,7 @@ namespace SAE_Sujet2
         public AddWindow()
         {
             InitializeComponent();
+            ApplicationData.loadApplicationData();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

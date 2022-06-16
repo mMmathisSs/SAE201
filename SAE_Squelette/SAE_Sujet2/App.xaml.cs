@@ -13,5 +13,9 @@ namespace SAE_Sujet2
     /// </summary>
     public partial class App : Application
     {
+        void lancementApplication(object sender, StartupEventArgs args)
+        {
+            ApplicationData.loadApplicationData();
+        }
     }
 }

@@ -18,22 +18,15 @@ namespace SAE_Sujet2
     /// </summary>
     public partial class ShowWindow : Window
     {
-        public ObservableCollection<Mission> LesMissions { get; set; }
-       
-
         public ShowWindow()
         {
             InitializeComponent();
-            /*LesMissions = new ObservableCollection<Mission>();
-            LesMissions.Add(new Mission("Mission 1", new DateTime(2015, 02, 01), "Mission difficile"));
-            LesMissions.Add(new Mission("Mission 2", new DateTime(2017, 09, 01)));
-            LesMissions.Add(new Mission("Mission 3", new DateTime(2020, 08, 01)));
-            LesMissions.Add(new Mission("Mission 4", new DateTime(2020, 11, 01)));
-            LesMissions.Add(new Mission("Mission 5", new DateTime(2021, 07, 01)));*/
+            ApplicationData.loadApplicationData();
+
+            lvMission.ItemsSource = ApplicationData.listeCorpsArmees;
+            dgSalarie.ItemsSource = ApplicationData.listeMissions;
 
             this.DataContext = this;
-            //lvMission.ItemsSource = LesMissions;
-            lvMission.ItemsSource = ApplicationData.listeCorpsArmees;
         }
 
         private void butRetour_Click(object sender, RoutedEventArgs e)
