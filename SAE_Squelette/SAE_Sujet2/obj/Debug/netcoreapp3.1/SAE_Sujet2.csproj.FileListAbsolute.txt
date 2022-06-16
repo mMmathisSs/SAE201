@@ -202,3 +202,4 @@ C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\De
 C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.csproj.CoreCompileInputs.cache
 C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.csproj.CopyComplete
 C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.genruntimeconfig.cache
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
