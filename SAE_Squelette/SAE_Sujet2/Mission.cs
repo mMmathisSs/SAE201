@@ -180,6 +180,33 @@ namespace SAE_Sujet2
         }
 
         /// <summary>
+        /// Supprime l'affectation d'une mission
+        /// </summary>
+        public void DeleteAffectation()
+        {
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+        }
+
+        /// <summary>
         /// Méthode pour mettre à jour une mission
         /// </summary>
         public void Update()
