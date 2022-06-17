@@ -88,6 +88,15 @@ namespace SAE_Sujet2
         {
             ((Mission)this.dgSalarie.SelectedItem).Delete();
             this.Close();
+            ShowWindow showWindow = new ShowWindow();
+            showWindow.ShowDialog();
+        }
+
+        private void butModif_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ModifWindow modifWindow = new ModifWindow(((Mission)this.dgSalarie.SelectedItem));
+            modifWindow.ShowDialog();
         }
     }
 }
