@@ -35,33 +35,44 @@
             Foreground="White" />
         <Label
             Width="158"
-            Margin="30,120,0,0"
+            Margin="30,195,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom de la mission :" />
         <Label
             Width="158"
-            Margin="30,195,0,0"
+            Margin="30,115,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Division concernée :" />
         <ComboBox
             x:Name="cbDivision"
             Width="187"
-            Margin="30,226,0,0"
+            Margin="30,146,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="LibelleDivision"
             ItemsSource="{Binding}"
             SelectedValuePath="IdDivision"
             SelectionChanged="cbDivision_SelectionChanged" />
+        <ComboBox
+            x:Name="cbMission"
+            Width="186"
+            Margin="30,226,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="LibelleMission"
+            ItemsSource="{Binding}"
+            SelectedValuePath="IdMission"
+            SelectionChanged="cbDivision_SelectionChanged"
+            Visibility="Visible" />
         <Label
             Width="158"
             Margin="30,273,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Date affectation :" />
-        <DatePicker x:Name="dpicker" Margin="22,304,233,268" />
+        <DatePicker x:Name="dpicker" Margin="30,304,233,268" />
         <Label
             Width="187"
             Margin="30,365,0,0"
@@ -94,14 +105,39 @@
             VerticalAlignment="Top"
             Click="Button_Click"
             Content="Annuler" />
-        <TextBox
-            x:Name="MissionBox"
-            Width="187"
-            Height="23"
-            Margin="30,146,0,0"
+        <Label
+            x:Name="MissionErrorLabel"
+            Width="163"
+            Height="31"
+            Margin="225,221,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" />
+            Background="#FFFF9393"
+            Content="Nom de la mission requise"
+            FontWeight="Bold"
+            Visibility="Hidden" />
+        <Label
+            x:Name="DivisionErrorLabel"
+            Width="163"
+            Height="31"
+            Margin="225,141,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FFFF9393"
+            Content="Nom de la division requise"
+            FontWeight="Bold"
+            Visibility="Hidden" />
+        <Label
+            x:Name="DatePickerErrorLabel"
+            Width="88"
+            Height="32"
+            Margin="225,302,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FFFF9393"
+            Content="Date requise"
+            FontWeight="Bold"
+            Visibility="Hidden" />
 
     </Grid>
 </Window>
