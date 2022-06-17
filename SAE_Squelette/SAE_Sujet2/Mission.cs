@@ -288,7 +288,14 @@ namespace SAE_Sujet2
                             uneMission.IdMission = reader.GetInt64(0);
                             uneMission.IdDivision = reader.GetInt64(1);
                             uneMission.DateAffectation = reader.GetDateTime(2);
-                            uneMission.Commentaire = null;
+                            if (reader.GetValue(3) is string)
+                            {
+                                uneMission.Commentaire = reader.GetString(3);
+                            }
+                            else
+                            {
+                                uneMission.Commentaire = null;
+                            }
                             uneMission.LibelleMission = reader.GetString(4);
                             listeMissions.Add(uneMission);
                         }
