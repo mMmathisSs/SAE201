@@ -86,8 +86,17 @@ namespace SAE_Sujet2
 
         private void ButSuppr_Click(object sender, RoutedEventArgs e)
         {
-            ((Mission)this.dgSalarie.SelectedItem).Delete();
+            ((Mission)this.dgSalarie.SelectedItem).DeleteAffectation();
             this.Close();
+            ShowWindow showWindow = new ShowWindow();
+            showWindow.ShowDialog();
+        }
+
+        private void ButModif_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ModifWindow modifWindow = new ModifWindow(((Mission)this.dgSalarie.SelectedItem));
+            modifWindow.ShowDialog();
         }
     }
 }

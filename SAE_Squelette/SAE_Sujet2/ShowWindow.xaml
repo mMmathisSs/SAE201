@@ -101,11 +101,21 @@
             x:Name="butSupprimer"
             Width="190"
             Height="35"
-            Margin="546,368,0,0"
+            Margin="532,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="ButSuppr_Click"
-            Content="Supprimer" />
+            Content="Supprimer"
+            RenderTransformOrigin="0.442,0.473" />
+        <Button
+            x:Name="butModif"
+            Width="190"
+            Height="35"
+            Margin="0,368,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="ButModif_Click"
+            Content="Modifier" />
 
     </Grid>
 </Window>
