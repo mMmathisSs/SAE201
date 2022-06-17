@@ -114,7 +114,7 @@
             Margin="0,368,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Click="butModif_Click"
+            Click="ButModif_Click"
             Content="Modifier" />
 
     </Grid>

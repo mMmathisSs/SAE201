@@ -92,7 +92,7 @@ namespace SAE_Sujet2
             showWindow.ShowDialog();
         }
 
-        private void butModif_Click(object sender, RoutedEventArgs e)
+        private void ButModif_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             ModifWindow modifWindow = new ModifWindow(((Mission)this.dgSalarie.SelectedItem));
