@@ -161,8 +161,35 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    if (access.SetData($"delete from [iut-acy\\claviozm].MISSION where IDMISSION = '{this.IdMission}';" +
-                        $"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';"))
+                    if (access.SetData($"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';" +
+                        $"delete from [iut-acy\\claviozm].MISSION where IDMISSION = '{this.IdMission}';"))
+                    {
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+        }
+
+        /// <summary>
+        /// Supprime l'affectation d'une mission
+        /// </summary>
+        public void DeleteAffectation()
+        {
+            DataAccess access = new DataAccess();
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    if (access.SetData($"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';"))
                     {
 
                     }
@@ -189,9 +216,9 @@ namespace SAE_Sujet2
             {
                 if (access.OpenConnection())
                 {
-                    if (access.SetData($"UPDATE [iut-acy\\claviozm].MISSION SET LIBELLEMISSION = '{this.LibelleMission}' " +
+                    if (access.SetData($"UPDATE [iut-acy\\claviozm].EFFECTUE2 SET DATEAFFECT = '{this.DateAffectation}', COMMENTAIRE = '{this.Commentaire}' " +
                         $"WHERE IDMISSION ={this.IdMission};" +
-                        $"UPDATE [iut-acy\\claviozm].EFFECTUE2 SET DATEAFFECT = '{this.DateAffectation}', COMMENTAIRE = '{this.Commentaire}' " +
+                        $"UPDATE [iut-acy\\claviozm].MISSION SET LIBELLEMISSION = '{this.LibelleMission}' " +
                         $"WHERE IDMISSION ={this.IdMission};"))
                     {
 

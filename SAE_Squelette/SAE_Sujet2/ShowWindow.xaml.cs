@@ -83,5 +83,11 @@ namespace SAE_Sujet2
                 dgSalarie.ItemsSource = ApplicationData.listeMissions;
             }
         }
+
+        private void ButSuppr_Click(object sender, RoutedEventArgs e)
+        {
+            ((Mission)this.dgSalarie.SelectedItem).Delete();
+            this.Close();
+        }
     }
 }
