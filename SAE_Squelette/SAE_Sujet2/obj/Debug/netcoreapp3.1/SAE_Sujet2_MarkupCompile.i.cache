@@ -4,16 +4,16 @@
 exe
 C#
 .cs
-P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\
+C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\
 SAE_Sujet2
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
+C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
 3-2109024942
 
 13518761442
-193679817172
+193-1148236900
 AddWindow.xaml;MainWindow.xaml;ShowWindow.xaml;
 
 True
