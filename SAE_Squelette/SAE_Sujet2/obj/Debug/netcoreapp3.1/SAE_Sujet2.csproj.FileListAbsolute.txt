@@ -207,3 +207,5 @@ C:\Users\mathi\OneDrive\IUT\SAE201\SAE_Squelette\SAE_Sujet2\bin\Debug\netcoreapp
 C:\Users\mathi\OneDrive\IUT\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ModifWindow.g.cs
 P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ModifWindow.baml
+C:\Users\mathi\OneDrive\IUT\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ModifWindow.g.cs
+C:\Users\mathi\OneDrive\IUT\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ModifWindow.baml

@@ -152,37 +152,9 @@ namespace SAE_Sujet2
         }
 
         /// <summary>
-        /// Méthode pour supprimer une mission
-        /// </summary>
-        public void Delete()
-        {
-            DataAccess access = new DataAccess();
-            try
-            {
-                if (access.OpenConnection())
-                {
-                    if (access.SetData($"delete from [iut-acy\\claviozm].EFFECTUE2 where IDMISSION = '{this.IdMission}';" +
-                        $"delete from [iut-acy\\claviozm].MISSION where IDMISSION = '{this.IdMission}';"))
-                    {
-
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
-                    }
-                    access.CloseConnection();
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message, "Important Message");
-            }
-        }
-
-        /// <summary>
         /// Supprime l'affectation d'une mission
         /// </summary>
-        public void DeleteAffectation()
+        public void Delete()
         {
             DataAccess access = new DataAccess();
             try
