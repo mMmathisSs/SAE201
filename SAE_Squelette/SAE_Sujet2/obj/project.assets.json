@@ -454,19 +454,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathi\\.nuget\\packages\\": {}
+    "C:\\Users\\chaussoc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "projectUniqueName": "P:\\S2\\SAe\\S2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
       "projectName": "SAE_Sujet2",
-      "projectPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
-      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
+      "projectPath": "P:\\S2\\SAe\\S2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "packagesPath": "C:\\Users\\chaussoc\\.nuget\\packages\\",
+      "outputPath": "P:\\S2\\SAe\\S2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chaussoc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -515,7 +520,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

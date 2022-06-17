@@ -97,6 +97,15 @@
             VerticalAlignment="Top"
             Click="butRetour_Click"
             Content="Retour" />
+        <Button
+            x:Name="butSupprimer"
+            Width="190"
+            Height="35"
+            Margin="546,368,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="ButSuppr_Click"
+            Content="Supprimer" />
 
     </Grid>
 </Window>
