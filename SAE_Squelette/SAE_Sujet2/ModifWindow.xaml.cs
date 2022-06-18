@@ -20,14 +20,13 @@ namespace SAE_Sujet2
         public ModifWindow(Mission mission)
         {
             InitializeComponent();
+            cbDivision.ItemsSource = ApplicationData.listeDivisions;
             List<Mission> temp = new List<Mission>();
-
-            foreach (Mission uneMission in ApplicationData.listeMissions)
-                if (uneMission.IdMission == mission.IdMission)
-                    missionBox.Text = uneMission.LibelleMission;
+            temp.Add(mission);
+            missionBox.Text = mission.LibelleMission;
             foreach (Division uneDivision in ApplicationData.listeDivisions)
                 if (uneDivision.IdDivision == mission.IdDivision)
-                    divisionBox.Text = uneDivision.LibelleDivision;
+                    cbDivision.Text = uneDivision.LibelleDivision;
             dpicker.Text = mission.DateAffectation.ToString("dd/MM/yyyy");
             comm.Text = mission.Commentaire;
         }
@@ -43,12 +42,17 @@ namespace SAE_Sujet2
         {
             Mission modifMission = new Mission();
             foreach (Division uneDivision in ApplicationData.listeDivisions)
-            { 
-                if (uneDivision.LibelleDivision == divisionBox.Text)
+            {
+                foreach (Mission uneMission in ApplicationData.listeMissions)
                 {
-                    modifMission = new Mission(1, uneDivision.IdDivision, missionBox.Text, DateTime.Parse(dpicker.Text), comm.Text);
+                    if (uneDivision.LibelleDivision == ((Division)cbDivision.SelectedItem).LibelleDivision && uneMission.LibelleMission == missionBox.Text)
+                    {
+                        modifMission = new Mission(uneMission.IdMission, uneDivision.IdDivision, missionBox.Text, DateTime.Parse(dpicker.Text), comm.Text);
+                        
+                    }
                 }
             }
+            Console.WriteLine(((Division)cbDivision.SelectedItem).LibelleDivision);
             modifMission.Update();
             this.Close();
             ShowWindow showWindow = new ShowWindow();
