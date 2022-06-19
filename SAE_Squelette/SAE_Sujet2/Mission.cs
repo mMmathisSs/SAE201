@@ -342,7 +342,7 @@ namespace SAE_Sujet2
                 if (access.OpenConnection())
                 {
                     reader = access.GetData($"select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION" +
-                        $"where m.LIBELLEMISSION = {libelle};");
+                        $" where m.LIBELLEMISSION = {libelle};");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
