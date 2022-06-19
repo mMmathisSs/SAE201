@@ -268,7 +268,7 @@ namespace SAE_Sujet2
                         while (reader.Read())
                         {
                             CorpsArmee unCorpsArmee = new CorpsArmee();
-                            unCorpsArmee.IdCorpsArmee = reader.GetInt32(0);
+                            unCorpsArmee.IdCorpsArmee = reader.GetInt64(0);
                             unCorpsArmee.NomCorpsArmee = reader.GetString(1);
                             listeCorpsArmee.Add(unCorpsArmee);
                         }
