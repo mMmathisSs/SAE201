@@ -13,7 +13,6 @@ namespace SAE_Sujet2.Tests
         [TestInitialize()]
         public void Init()
         {
-            Mission missionCreate = new Mission(6, "test create 4444", new DateTime(3046, 12, 12), "test create 4444");
         }
 
         [TestMethod()]

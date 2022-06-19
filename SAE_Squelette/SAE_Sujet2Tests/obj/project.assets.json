@@ -6156,19 +6156,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bella\\.nuget\\packages\\": {}
+    "C:\\Users\\mathi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2Tests\\SAE_Sujet2Tests.csproj",
+      "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2Tests\\SAE_Sujet2Tests.csproj",
       "projectName": "SAE_Sujet2Tests",
-      "projectPath": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2Tests\\SAE_Sujet2Tests.csproj",
-      "packagesPath": "C:\\Users\\bella\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2Tests\\obj\\",
+      "projectPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2Tests\\SAE_Sujet2Tests.csproj",
+      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bella\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6182,8 +6182,8 @@
         "netcoreapp3.1": {
           "targetAlias": ".NETCoreApp,Version=v3.1",
           "projectReferences": {
-            "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj": {
-              "projectPath": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj"
+            "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj": {
+              "projectPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj"
             }
           }
         }
