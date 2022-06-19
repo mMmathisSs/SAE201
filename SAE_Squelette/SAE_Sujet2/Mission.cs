@@ -48,6 +48,21 @@ namespace SAE_Sujet2
         }
 
         /// <summary>
+        /// Constructeur de Mission sans id pour les test unitaires
+        /// </summary>
+        /// <param name="idDivision"></param>
+        /// <param name="libelleMission"></param>
+        /// <param name="dateAffectation"></param>
+        /// <param name="commentaire"></param>
+        public Mission(long idDivision, string libelleMission, DateTime dateAffectation, string commentaire)
+        {
+            this.IdDivision = idDivision;
+            this.LibelleMission = libelleMission;
+            this.DateAffectation = dateAffectation;
+            this.Commentaire = commentaire;
+        }
+
+        /// <summary>
         /// Constructeur vide de Mission
         /// </summary>
         public Mission()
@@ -142,7 +157,7 @@ namespace SAE_Sujet2
                 return this.commentaire;
             }
 
-            private set
+            set
             {
                 if (String.IsNullOrEmpty(value))
                     this.commentaire = "Pas de commentaire";
@@ -195,7 +210,7 @@ namespace SAE_Sujet2
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message update");
                     }
                     access.CloseConnection();
                 }
@@ -317,7 +332,7 @@ namespace SAE_Sujet2
         /// </summary>
         /// <param name="criteres"></param>
         /// <returns></returns>
-        public List<Mission> FindBySelection(string criteres)
+        public List<Mission> FindBySelection(string libelle)
         {
             List<Mission> listeMissions = new List<Mission>();
             DataAccess access = new DataAccess();
@@ -327,14 +342,14 @@ namespace SAE_Sujet2
                 if (access.OpenConnection())
                 {
                     reader = access.GetData($"select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION" +
-                        $"where m.LIBELLEMISSION = {this.LibelleMission};");
+                        $"where m.LIBELLEMISSION = {libelle};");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Mission uneMission = new Mission();
-                            uneMission.IdMission = reader.GetInt32(0);
-                            uneMission.IdDivision = reader.GetInt32(1);
+                            uneMission.IdMission = reader.GetInt64(0);
+                            uneMission.IdDivision = reader.GetInt64(1);
                             uneMission.DateAffectation = reader.GetDateTime(2);
                             uneMission.Commentaire = reader.GetString(3);
                             uneMission.LibelleMission = reader.GetString(4);
