@@ -68,12 +68,12 @@ namespace SAE_Sujet2.Tests
 
             missionDelete.Create();
 
-            List<Mission> listeMissions1 = FindBySelectionPourLesTests("test delete 4444");
+            List<Mission> listeMissions1 = FindBySelection("test delete 4444");
             missionDelete = listeMissions1[0];
 
             missionDelete.Delete();
 
-            List<Mission> listeMissions = FindBySelectionPourLesTests("test delete 4444");
+            List<Mission> listeMissions = FindBySelection("test delete 4444");
 
             if (listeMissions.Count == 0)
             {
@@ -88,8 +88,8 @@ namespace SAE_Sujet2.Tests
 
             if (access.OpenConnection())
             {
-                access.SetData("delete from EFFECTUE2 where COMMENTAIRE = 'test delete 4444';" +
-                    "delete from mission where LIBELLEMISSION = 'test delete 4444';");
+                access.SetData("delete from [IUT-ACY\\claviozm].[EFFECTUE2] where COMMENTAIRE = 'test delete 4444';" +
+                    "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test delete 4444';");
                 access.CloseConnection();
             }
         }
@@ -103,13 +103,13 @@ namespace SAE_Sujet2.Tests
 
             missionUpdate.Create();
 
-            List<Mission> listeMissions1 = FindBySelectionPourLesTests("test update 4444");
+            List<Mission> listeMissions1 = FindBySelection("test update 4444");
             missionUpdate = listeMissions1[0];
 
             missionUpdate.Commentaire = "test update 8888";
             missionUpdate.Update();
 
-            List<Mission> listeMissions = FindBySelectionPourLesTests("test update 4444");
+            List<Mission> listeMissions = FindBySelection("test update 4444");
 
             if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test update 4444" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test update 8888")
             {
@@ -124,8 +124,8 @@ namespace SAE_Sujet2.Tests
 
             if (access.OpenConnection())
             {
-                access.SetData("delete from EFFECTUE2 where COMMENTAIRE = 'test update 8888';" +
-                    "delete from mission where LIBELLEMISSION = 'test update 8888';");
+                access.SetData("delete from [IUT-ACY\\claviozm].[EFFECTUE2] where COMMENTAIRE = 'test update 8888';" +
+                    "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test update 8888';");
                 access.CloseConnection();
             }
         }
@@ -145,7 +145,7 @@ namespace SAE_Sujet2.Tests
 
             missionCreate.Create();
 
-            List<Mission> listeMissions = FindBySelectionPourLesTests("test create 4444");
+            List<Mission> listeMissions = FindBySelection("test create 4444");
 
             if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test create 4444" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test create 4444")
             {
@@ -160,8 +160,8 @@ namespace SAE_Sujet2.Tests
 
             if (access.OpenConnection())
             {
-                access.SetData("delete from EFFECTUE2 where COMMENTAIRE = 'test create 4444';" +
-                    "delete from mission where LIBELLEMISSION = 'test create 4444';");
+                access.SetData("delete from [IUT-ACY\\claviozm].[EFFECTUE2] where COMMENTAIRE = 'test create 4444';" +
+                    "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test create 4444';");
                 access.CloseConnection();
             }
         }
@@ -169,7 +169,37 @@ namespace SAE_Sujet2.Tests
         [TestMethod()]
         public void FindAllTest()
         {
+            //bool test;
+            //int nb = 0;
+            //SqlCommand comm = new SqlCommand("select count(*) from[IUT - ACY\\claviozm].[EFFECTUE2]");
+            //DataAccess access = new DataAccess();
 
+
+            //List<Mission> listeMissions = FindAll();
+
+            //if (access.OpenConnection())
+            //{
+            //    nb = int.Parse(comm);
+            //    access.CloseConnection();
+            //}
+
+            //if (listeMissions.Count == nb)
+            //{
+            //    test = true;
+            //}
+            //else
+            //{
+            //    test = false;
+            //}
+
+            //Assert.IsTrue(test);
+
+            //if (access.OpenConnection())
+            //{
+            //    access.SetData("delete from [IUT-ACY\\claviozm].[EFFECTUE2] where COMMENTAIRE = 'test find 4444';" +
+            //        "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test find 4444';");
+            //    access.CloseConnection();
+            //}
         }
 
         [TestMethod()]
@@ -181,7 +211,7 @@ namespace SAE_Sujet2.Tests
 
             missionFind.Create();
 
-            List<Mission> listeMissions = FindBySelectionPourLesTests("test find 4444");
+            List<Mission> listeMissions = FindBySelection("test find 4444");
 
             if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test find 4444" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test find 4444")
             {
@@ -196,13 +226,13 @@ namespace SAE_Sujet2.Tests
 
             if (access.OpenConnection())
             {
-                access.SetData("delete from EFFECTUE2 where COMMENTAIRE = 'test find 4444';" +
-                    "delete from mission where LIBELLEMISSION = 'test find 4444';");
+                access.SetData("delete from [IUT-ACY\\claviozm].[EFFECTUE2] where COMMENTAIRE = 'test find 4444';" +
+                    "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test find 4444';");
                 access.CloseConnection();
             }
         }
 
-        public List<Mission> FindBySelectionPourLesTests(string libelle)
+        public List<Mission> FindAll()
         {
             List<Mission> listeMissions = new List<Mission>();
             DataAccess access = new DataAccess();
@@ -211,7 +241,52 @@ namespace SAE_Sujet2.Tests
             {
                 if (access.OpenConnection())
                 {
-                    reader = access.GetData($"select e.*, LIBELLEMISSION from EFFECTUE2 e join MISSION m on e.IDMISSION = m.IDMISSION" +
+                    reader = access.GetData("select e.*, LIBELLEMISSION from [IUT-ACY\\claviozm].[EFFECTUE2] e join [IUT-ACY\\claviozm].[MISSION] m on e.IDMISSION = m.IDMISSION;");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Mission uneMission = new Mission();
+                            uneMission.IdMission = reader.GetInt64(0);
+                            uneMission.IdDivision = reader.GetInt64(1);
+                            uneMission.DateAffectation = reader.GetDateTime(2);
+                            if (reader.GetValue(3) is string)
+                            {
+                                uneMission.Commentaire = reader.GetString(3);
+                            }
+                            else
+                            {
+                                uneMission.Commentaire = null;
+                            }
+                            uneMission.LibelleMission = reader.GetString(4);
+                            listeMissions.Add(uneMission);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
+                    }
+                    reader.Close();
+                    access.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
+            return listeMissions;
+        }
+
+        public List<Mission> FindBySelection(string libelle)
+        {
+            List<Mission> listeMissions = new List<Mission>();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+            try
+            {
+                if (access.OpenConnection())
+                {
+                    reader = access.GetData($"select e.*, LIBELLEMISSION from [IUT-ACY\\claviozm].[EFFECTUE2] e join MISSION m on e.IDMISSION = m.IDMISSION" +
                         $" where m.LIBELLEMISSION = '{libelle}';");
                     if (reader.HasRows)
                     {
@@ -228,7 +303,7 @@ namespace SAE_Sujet2.Tests
                     }
                     else
                     {
-                        Console.WriteLine("No rows found.", "Important Message");
+                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
                     }
                     reader.Close();
                     access.CloseConnection();
@@ -236,7 +311,7 @@ namespace SAE_Sujet2.Tests
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + "Important Message");
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
             }
             return listeMissions;
         }
