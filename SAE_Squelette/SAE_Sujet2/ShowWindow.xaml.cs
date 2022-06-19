@@ -86,7 +86,7 @@ namespace SAE_Sujet2
 
         private void ButSuppr_Click(object sender, RoutedEventArgs e)
         {
-            ((Mission)this.dgSalarie.SelectedItem).DeleteAffectation();
+            ((Mission)this.dgSalarie.SelectedItem).Delete();
             this.Close();
             ShowWindow showWindow = new ShowWindow();
             showWindow.ShowDialog();
