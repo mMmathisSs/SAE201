@@ -461,11 +461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\S2\\SAe\\S2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "projectUniqueName": "C:\\Users\\celia\\Desktop\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
       "projectName": "SAE_Sujet2",
-      "projectPath": "P:\\S2\\SAe\\S2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "projectPath": "C:\\Users\\celia\\Desktop\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
       "packagesPath": "C:\\Users\\celia\\.nuget\\packages\\",
-      "outputPath": "P:\\S2\\SAe\\S2.01\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
+      "outputPath": "C:\\Users\\celia\\Desktop\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
