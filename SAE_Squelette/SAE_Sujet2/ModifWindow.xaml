@@ -36,13 +36,6 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Division concernée :" />
-        <TextBox
-            x:Name="divisionBox"
-            Width="187"
-            Margin="30,226,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            IsEnabled="False" />
         <Label
             Width="158"
             Margin="30,273,0,0"
@@ -88,13 +81,24 @@
             Margin="30,146,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" IsEnabled="False" />
+        <ComboBox
+            x:Name="cbDivision"
+            Width="187"
+            Margin="30,221,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="LibelleDivision"
+            ItemsSource="{Binding}"
+            SelectedValuePath="IdDivision" />
         <TextBox
             x:Name="dpicker"
             Width="187"
+            Height="23"
             Margin="30,304,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
 
     </Grid>
 </Window>
