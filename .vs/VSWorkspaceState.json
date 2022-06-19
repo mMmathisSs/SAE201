@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SAE_Squelette",
+    "\\SAE_Squelette\\SAE_Sujet2"
   ],
-  "SelectedNode": "\\SAE_Squelette.sln",
+  "SelectedNode": "\\SAE_Squelette\\SAE_Sujet2\\CorpsArmee.cs",
   "PreviewInSolutionExplorer": false
 }

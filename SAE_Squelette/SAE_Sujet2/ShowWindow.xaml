@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE_Sujet2"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="ShowWindow"
+    Title="Liste des affectations"
     Width="800"
     Height="450"
     Icon="/star.png"
@@ -13,6 +13,49 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+        <ControlTemplate x:Key="Arrondi" TargetType="{x:Type ButtonBase}">
+            <Border
+                x:Name="border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="5"
+                CornerRadius="20,20,20,20 "
+                SnapsToDevicePixels="true">
+                <ContentPresenter
+                    x:Name="contentPresenter"
+                    Margin="{TemplateBinding Padding}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Focusable="False"
+                    RecognizesAccessKey="True"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsDefaulted" Value="true">
+                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+                    <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Button.Disabled.Foreground}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
         <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
         <DataTemplate x:Key="caseACocher">
             <StackPanel Orientation="Horizontal">
@@ -30,7 +73,7 @@
             Margin="0,217,0,84"
             HorizontalAlignment="Center"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listeMissions}">
+            ItemsSource="{Binding listeMissions}" FontFamily="Microsoft YaHei UI">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="*"
@@ -58,7 +101,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="Black"
-            ItemsSource="{Binding listeCorpsArmees}">
+            ItemsSource="{Binding listeCorpsArmees}" FontFamily="Microsoft YaHei UI">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
@@ -77,7 +120,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="Black"
-            ItemsSource="{Binding listeDivisions}">
+            ItemsSource="{Binding listeDivisions}" FontFamily="Microsoft YaHei UI">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
@@ -89,6 +132,7 @@
             </ListView.View>
         </ListView>
         <Button
+            Template="{DynamicResource Arrondi}"
             x:Name="butRetour"
             Width="190"
             Height="35"
@@ -96,8 +140,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="butRetour_Click"
-            Content="Retour" />
+            Content="Retour" FontFamily="Microsoft YaHei UI" />
         <Button
+            Template="{DynamicResource Arrondi}"
             x:Name="butSupprimer"
             Width="190"
             Height="35"
@@ -106,8 +151,9 @@
             VerticalAlignment="Top"
             Click="ButSuppr_Click"
             Content="Supprimer"
-            RenderTransformOrigin="0.442,0.473" />
+            RenderTransformOrigin="0.442,0.473" FontFamily="Microsoft YaHei UI" />
         <Button
+            Template="{DynamicResource Arrondi}"
             x:Name="butModif"
             Width="190"
             Height="35"
@@ -115,7 +161,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Click="ButModif_Click"
-            Content="Modifier" />
+            Content="Modifier" FontFamily="Microsoft YaHei UI" />
 
     </Grid>
 </Window>

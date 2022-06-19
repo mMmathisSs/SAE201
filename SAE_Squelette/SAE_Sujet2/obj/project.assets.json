@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathi\\.nuget\\packages\\": {}
+    "C:\\Users\\bella\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "projectUniqueName": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
       "projectName": "SAE_Sujet2",
-      "projectPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
-      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathi\\OneDrive\\IUT\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
+      "projectPath": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2\\SAE_Sujet2.csproj",
+      "packagesPath": "C:\\Users\\bella\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bella\\Desktop\\zzez\\SAE201\\SAE_Squelette\\SAE_Sujet2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bella\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

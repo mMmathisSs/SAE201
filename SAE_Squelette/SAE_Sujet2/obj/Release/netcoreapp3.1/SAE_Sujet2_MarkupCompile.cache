@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\obj\Release\netcoreapp3.1\
+C:\Users\bella\Desktop\zzez\SAE201\SAE_Squelette\SAE_Sujet2\obj\Release\netcoreapp3.1\
 SAE_Sujet2
 none
 false
 TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\bellahcy\Source\Repos\mMmathisSs\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
-3-2109024942
+C:\Users\bella\Desktop\zzez\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
+4-1401956198
 
-111702793321
-192-1533232326
-AddWindow.xaml;MainWindow.xaml;ShowWindow.xaml;
+12-1009972028
+193-2043086938
+AddWindow.xaml;MainWindow.xaml;ModifWindow.xaml;ShowWindow.xaml;
 
 True
 
