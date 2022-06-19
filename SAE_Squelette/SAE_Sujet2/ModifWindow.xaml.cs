@@ -17,12 +17,12 @@ namespace SAE_Sujet2
     /// </summary>
     public partial class ModifWindow : Window
     {
+        public static Mission laMission = new Mission();
         public ModifWindow(Mission mission)
         {
             InitializeComponent();
+            laMission = mission;
             cbDivision.ItemsSource = ApplicationData.listeDivisions;
-            List<Mission> temp = new List<Mission>();
-            temp.Add(mission);
             missionBox.Text = mission.LibelleMission;
             foreach (Division uneDivision in ApplicationData.listeDivisions)
                 if (uneDivision.IdDivision == mission.IdDivision)
@@ -43,16 +43,9 @@ namespace SAE_Sujet2
             Mission modifMission = new Mission();
             foreach (Division uneDivision in ApplicationData.listeDivisions)
             {
-                foreach (Mission uneMission in ApplicationData.listeMissions)
-                {
-                    if (uneDivision.LibelleDivision == ((Division)cbDivision.SelectedItem).LibelleDivision && uneMission.LibelleMission == missionBox.Text)
-                    {
-                        modifMission = new Mission(uneMission.IdMission, uneDivision.IdDivision, missionBox.Text, DateTime.Parse(dpicker.Text), comm.Text);
-                        
-                    }
-                }
+                if ((uneDivision.LibelleDivision == ((Division)cbDivision.SelectedItem).LibelleDivision))
+                    modifMission = new Mission(laMission.IdMission, uneDivision.IdDivision, missionBox.Text, DateTime.Parse(dpicker.Text), comm.Text);
             }
-            Console.WriteLine(((Division)cbDivision.SelectedItem).LibelleDivision);
             modifMission.Update();
             this.Close();
             ShowWindow showWindow = new ShowWindow();
