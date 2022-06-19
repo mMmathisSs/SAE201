@@ -68,11 +68,14 @@ namespace SAE_Sujet2.Tests
 
             missionDelete.Create();
 
+            List<Mission> listeMissions1 = FindBySelectionPourLesTests("test delete 4444");
+            missionDelete = listeMissions1[0];
+
             missionDelete.Delete();
 
             List<Mission> listeMissions = FindBySelectionPourLesTests("test delete 4444");
 
-            if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test delete 4444" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test delete 4444")
+            if (listeMissions.Count == 0)
             {
                 test = true;
             }
@@ -81,7 +84,7 @@ namespace SAE_Sujet2.Tests
                 test = false;
             }
 
-            Assert.IsFalse(test);
+            Assert.IsTrue(test);
 
             if (access.OpenConnection())
             {
@@ -100,13 +103,15 @@ namespace SAE_Sujet2.Tests
 
             missionUpdate.Create();
 
-            missionUpdate.Commentaire = "test update 8888";
+            List<Mission> listeMissions1 = FindBySelectionPourLesTests("test update 4444");
+            missionUpdate = listeMissions1[0];
 
+            missionUpdate.Commentaire = "test update 8888";
             missionUpdate.Update();
 
-            List<Mission> listeMissions = FindBySelectionPourLesTests("test update 8888");
+            List<Mission> listeMissions = FindBySelectionPourLesTests("test update 4444");
 
-            if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test update 8888" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test update 8888")
+            if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test update 4444" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test update 8888")
             {
                 test = true;
             }
@@ -170,7 +175,31 @@ namespace SAE_Sujet2.Tests
         [TestMethod()]
         public void FindBySelectionTest()
         {
+            bool test;
+            Mission missionFind = new Mission(6, "test find 4444", new DateTime(3046, 12, 12), "test find 4444");
+            DataAccess access = new DataAccess();
 
+            missionFind.Create();
+
+            List<Mission> listeMissions = FindBySelectionPourLesTests("test find 4444");
+
+            if (listeMissions[0].IdDivision == 6 && listeMissions[0].LibelleMission == "test find 4444" && listeMissions[0].DateAffectation == new DateTime(3046, 12, 12) && listeMissions[0].Commentaire == "test find 4444")
+            {
+                test = true;
+            }
+            else
+            {
+                test = false;
+            }
+
+            Assert.IsTrue(test);
+
+            if (access.OpenConnection())
+            {
+                access.SetData("delete from EFFECTUE2 where COMMENTAIRE = 'test find 4444';" +
+                    "delete from mission where LIBELLEMISSION = 'test find 4444';");
+                access.CloseConnection();
+            }
         }
 
         public List<Mission> FindBySelectionPourLesTests(string libelle)
