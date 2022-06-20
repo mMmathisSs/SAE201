@@ -279,3 +279,5 @@ C:\Users\celia\Desktop\SAE201\SAE_Squelette\SAE_Sujet2\bin\Debug\netcoreapp3.1\S
 C:\Users\celia\Desktop\SAE201\SAE_Squelette\SAE_Sujet2\bin\Debug\netcoreapp3.1\SAE_Sujet2.dll
 C:\Users\celia\Desktop\SAE201\SAE_Squelette\SAE_Sujet2\bin\Debug\netcoreapp3.1\SAE_Sujet2.pdb
 C:\Users\celia\Desktop\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\SAE_Sujet2.genruntimeconfig.cache
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ModifWindow.g.cs
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\ModifWindow.baml
