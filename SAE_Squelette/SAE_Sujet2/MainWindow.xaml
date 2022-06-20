@@ -5,51 +5,111 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE_Sujet2"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Affectation Admin"
+    Title="Interface d'administration"
     Width="800"
     Height="450"
+    Icon="/star.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" Icon="/star.png">
+    mc:Ignorable="d">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+        <ControlTemplate x:Key="Arrondi" TargetType="{x:Type ButtonBase}">
+            <Border
+                x:Name="border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="5"
+                CornerRadius="20,20,20,20 "
+                SnapsToDevicePixels="true">
+                <ContentPresenter
+                    x:Name="contentPresenter"
+                    Margin="{TemplateBinding Padding}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Focusable="False"
+                    RecognizesAccessKey="True"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsDefaulted" Value="true">
+                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+                    <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Button.Disabled.Foreground}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFDFFFE5" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Label
             Width="758"
             Height="68"
-            Margin="0,20,0,0"
+            Margin="0,38,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             Content="Interface Administration des affectations"
-            FontFamily="72 Black"
+            FontFamily="Kozuka Gothic Pr6N B"
             FontSize="36" />
         <Button
             x:Name="butAjouter"
-            Width="229"
+            Width="250"
             Height="94"
-            Margin="81,179,0,0"
+            Margin="110,284,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             Click="butAjouter_Click"
             Content="Ajouter Affectation"
-            FontFamily="72 Black"
-            FontSize="22" >
+            FontFamily="Kozuka Gothic Pr6N B"
+            FontSize="22"
+            Template="{DynamicResource Arrondi}" BorderBrush="#FF004B0E" Background="#FFC4FFE7" Foreground="Black">
             <Button.Style>
-                <Style/>
+                <Style />
             </Button.Style>
         </Button>
+
         <Button
             x:Name="butConsulter"
-            Width="229"
+            Width="250"
             Height="94"
-            Margin="0,179,81,0"
+            Margin="0,284,110,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             Click="butConsulter_Click"
-            Content="Consulter&#xD;&#xA;Affectation"
-            FontFamily="72 Black"
-            FontSize="22" />
+            Content="Consulter Affectation"
+            FontFamily="Kozuka Gothic Pr6N B"
+            FontSize="22"
+            Template="{DynamicResource Arrondi}" BorderBrush="#FF004B0E" FontWeight="Normal" FontStyle="Normal" FontStretch="Medium" Background="#FFC4FFE7">
+            <Button.Style>
+                <Style />
+            </Button.Style>
+        </Button>
+        <Image Width="144" Height="124" VerticalAlignment="Center" Source="/star.png"/>
 
     </Grid>
 </Window>

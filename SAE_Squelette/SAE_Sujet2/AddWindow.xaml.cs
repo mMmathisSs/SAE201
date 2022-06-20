@@ -42,7 +42,6 @@ namespace SAE_Sujet2
             // Variable de validation
             int cntError = 0;
             string formatted = "";
-            // Conversion de la date
 
             // Tests
             if (cbDivision.Text == "")
