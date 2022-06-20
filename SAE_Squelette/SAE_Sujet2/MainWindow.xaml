@@ -60,8 +60,8 @@
     <Grid>
         <Grid.Background>
             <RadialGradientBrush>
-                <GradientStop Color="#FFDFFFE5" Offset="1"/>
-                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Offset="1" Color="#FFDFFFE5" />
+                <GradientStop Offset="0" Color="White" />
             </RadialGradientBrush>
         </Grid.Background>
         <Label
@@ -71,7 +71,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
-            Content="Interface Administration des affectations"
+            Content="Interface d'administration des affectations"
             FontFamily="Kozuka Gothic Pr6N B"
             FontSize="36" />
         <Button
@@ -82,11 +82,14 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
+            Background="#FFC4FFE7"
+            BorderBrush="#FF004B0E"
             Click="butAjouter_Click"
-            Content="Ajouter Affectation"
+            Content="Ajouter affectation"
             FontFamily="Kozuka Gothic Pr6N B"
             FontSize="22"
-            Template="{DynamicResource Arrondi}" BorderBrush="#FF004B0E" Background="#FFC4FFE7" Foreground="Black">
+            Foreground="Black"
+            Template="{DynamicResource Arrondi}">
             <Button.Style>
                 <Style />
             </Button.Style>
@@ -100,16 +103,25 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
+            Background="#FFC4FFE7"
+            BorderBrush="#FF004B0E"
             Click="butConsulter_Click"
-            Content="Consulter Affectation"
+            Content="Consulter affectations"
             FontFamily="Kozuka Gothic Pr6N B"
             FontSize="22"
-            Template="{DynamicResource Arrondi}" BorderBrush="#FF004B0E" FontWeight="Normal" FontStyle="Normal" FontStretch="Medium" Background="#FFC4FFE7">
+            FontStretch="Medium"
+            FontStyle="Normal"
+            FontWeight="Normal"
+            Template="{DynamicResource Arrondi}">
             <Button.Style>
                 <Style />
             </Button.Style>
         </Button>
-        <Image Width="144" Height="124" VerticalAlignment="Center" Source="/star.png"/>
+        <Image
+            Width="144"
+            Height="124"
+            VerticalAlignment="Center"
+            Source="/star.png" />
 
     </Grid>
 </Window>

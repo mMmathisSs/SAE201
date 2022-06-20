@@ -70,10 +70,11 @@
         <DataGrid
             x:Name="dgSalarie"
             Width="780"
-            Margin="0,217,0,84"
+            Margin="0,217,0,71"
             HorizontalAlignment="Center"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listeMissions}" FontFamily="Microsoft YaHei UI">
+            FontFamily="Microsoft YaHei UI"
+            ItemsSource="{Binding listeMissions}">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="*"
@@ -101,7 +102,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="Black"
-            ItemsSource="{Binding listeCorpsArmees}" FontFamily="Microsoft YaHei UI">
+            FontFamily="Microsoft YaHei UI"
+            ItemsSource="{Binding listeCorpsArmees}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
@@ -120,19 +122,19 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="Black"
-            ItemsSource="{Binding listeDivisions}" FontFamily="Microsoft YaHei UI">
+            FontFamily="Microsoft YaHei UI"
+            ItemsSource="{Binding listeDivisions}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
                     <GridViewColumn
-                        Width="150"
+                        Width="130"
                         DisplayMemberBinding="{Binding LibelleDivision}"
                         Header="Divisions" />
                 </GridView>
             </ListView.View>
         </ListView>
         <Button
-            Template="{DynamicResource Arrondi}"
             x:Name="butRetour"
             Width="190"
             Height="35"
@@ -140,9 +142,10 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="butRetour_Click"
-            Content="Retour" FontFamily="Microsoft YaHei UI" />
+            Content="Retour"
+            FontFamily="Microsoft YaHei UI"
+            Template="{DynamicResource Arrondi}" />
         <Button
-            Template="{DynamicResource Arrondi}"
             x:Name="butSupprimer"
             Width="190"
             Height="35"
@@ -151,9 +154,10 @@
             VerticalAlignment="Top"
             Click="ButSuppr_Click"
             Content="Supprimer"
-            RenderTransformOrigin="0.442,0.473" FontFamily="Microsoft YaHei UI" />
+            FontFamily="Microsoft YaHei UI"
+            RenderTransformOrigin="0.442,0.473"
+            Template="{DynamicResource Arrondi}" />
         <Button
-            Template="{DynamicResource Arrondi}"
             x:Name="butModif"
             Width="190"
             Height="35"
@@ -161,7 +165,9 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Click="ButModif_Click"
-            Content="Modifier" FontFamily="Microsoft YaHei UI" />
+            Content="Modifier"
+            FontFamily="Microsoft YaHei UI"
+            Template="{DynamicResource Arrondi}" />
 
     </Grid>
 </Window>

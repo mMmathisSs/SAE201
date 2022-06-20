@@ -5,9 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE_Sujet2"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="ModifWindow"
+    Title="Modifier une affectation"
     Width="450"
     Height="600"
+    Icon="/star.png"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Label
@@ -81,7 +84,8 @@
             Margin="30,146,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" IsEnabled="False" />
+            IsEnabled="False"
+            TextWrapping="Wrap" />
         <ComboBox
             x:Name="cbDivision"
             Width="187"
