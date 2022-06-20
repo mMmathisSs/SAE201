@@ -1,0 +1,12 @@
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\SAE_Sujet2.exe
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\Images\star.png
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\SAE_Sujet2.dll
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\SAE_Sujet2.deps.json
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\SAE_Sujet2.runtimeconfig.json
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\SAE_Sujet2.pdb
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\System.Data.SqlClient.dll
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\runtimes\win-arm64\native\sni.dll
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\runtimes\win-x64\native\sni.dll
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\runtimes\win-x86\native\sni.dll
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+P:\S2\SAe\S2.01\SAE201\SAE_Squelette\SAE_Sujet2\bin\Release\netcoreapp3.1\publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
