@@ -8,11 +8,8 @@
     Title="Ajouter une affectation"
     Width="450"
     Height="600"
-    MinWidth="450"
-    MinHeight="600"
-    MaxWidth="450"
-    MaxHeight="600"
     Icon="/star.png"
+    ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
@@ -83,13 +80,17 @@
             Margin="30,195,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom de la mission :" FontFamily="Microsoft YaHei UI Light" />
+            Content="Nom de la mission :"
+            FontFamily="Microsoft YaHei UI Light" />
         <Label
             Width="158"
             Margin="30,115,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Division concernée :" FontFamily="Microsoft YaHei UI Light" FontStyle="Italic" FontWeight="UltraBlack" />
+            Content="Division concernée :"
+            FontFamily="Microsoft YaHei UI Light"
+            FontStyle="Italic"
+            FontWeight="UltraBlack" />
         <ComboBox
             x:Name="cbDivision"
             Width="187"
@@ -116,14 +117,19 @@
             Margin="30,273,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Date affectation :" FontFamily="Microsoft YaHei UI Light" />
-        <DatePicker x:Name="dpicker" Margin="30,304,233,268" FontFamily="Microsoft YaHei UI Light" />
+            Content="Date affectation :"
+            FontFamily="Microsoft YaHei UI Light" />
+        <DatePicker
+            x:Name="dpicker"
+            Margin="30,304,233,268"
+            FontFamily="Microsoft YaHei UI Light" />
         <Label
             Width="187"
             Margin="30,365,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Commentaire  :" FontFamily="Microsoft YaHei UI Light" />
+            Content="Commentaire  :"
+            FontFamily="Microsoft YaHei UI Light" />
         <TextBox
             x:Name="tbAdd"
             Width="332"
@@ -133,7 +139,6 @@
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Button
-            Template="{DynamicResource Arrondi}"
             x:Name="button_Add"
             Width="126"
             Height="42"
@@ -142,16 +147,19 @@
             VerticalAlignment="Top"
             Click="button_Add_Click"
             Content="Ajouter"
-            FontWeight="Bold" FontFamily="Microsoft YaHei UI" />
+            FontFamily="Microsoft YaHei UI"
+            FontWeight="Bold"
+            Template="{DynamicResource Arrondi}" />
         <Button
-            Template="{DynamicResource Arrondi}"
             Width="126"
             Height="42"
             Margin="62,512,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"
-            Content="Annuler" FontFamily="Microsoft YaHei UI" />
+            Content="Annuler"
+            FontFamily="Microsoft YaHei UI"
+            Template="{DynamicResource Arrondi}" />
         <Label
             x:Name="MissionErrorLabel"
             Width="163"

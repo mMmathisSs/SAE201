@@ -73,7 +73,7 @@ namespace SAE_Sujet2
             {
                 Mission addMission = new Mission(1, ((Division)cbDivision.SelectedItem).IdDivision, ((Mission)cbMission.SelectedItem).LibelleMission, DateTime.Parse(formatted), tbAdd.Text);
                 addMission.Create();
-                MessageBox.Show("L'affectation à bien été ajouté !", "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("L'affectation a bien été ajouté !", "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
             }
             else

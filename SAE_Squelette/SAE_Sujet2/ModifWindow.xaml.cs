@@ -47,6 +47,7 @@ namespace SAE_Sujet2
                     modifMission = new Mission(laMission.IdMission, uneDivision.IdDivision, missionBox.Text, DateTime.Parse(dpicker.Text), comm.Text);
             }
             modifMission.Update();
+            MessageBox.Show("L'affectation a bien été modifié !", "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
             ShowWindow showWindow = new ShowWindow();
             showWindow.ShowDialog();

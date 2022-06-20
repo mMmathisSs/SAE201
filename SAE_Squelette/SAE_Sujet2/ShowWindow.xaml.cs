@@ -86,17 +86,31 @@ namespace SAE_Sujet2
 
         private void ButSuppr_Click(object sender, RoutedEventArgs e)
         {
-            ((Mission)this.dgSalarie.SelectedItem).Delete();
-            this.Close();
-            ShowWindow showWindow = new ShowWindow();
-            showWindow.ShowDialog();
+            if (this.dgSalarie.SelectedItem == null)
+                MessageBox.Show("Sélectionner une affectation", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer ?", "Attention", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+                {
+                    ((Mission)this.dgSalarie.SelectedItem).Delete();
+                    MessageBox.Show("L'affectation a bien été supprimé !", "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
+                    ShowWindow showWindow = new ShowWindow();
+                    showWindow.ShowDialog();
+                }
+            }
         }
 
         private void ButModif_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            ModifWindow modifWindow = new ModifWindow(((Mission)this.dgSalarie.SelectedItem));
-            modifWindow.ShowDialog();
+            if (this.dgSalarie.SelectedItem == null)
+                MessageBox.Show("Sélectionner une affectation", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                ModifWindow modifWindow = new ModifWindow(((Mission)this.dgSalarie.SelectedItem));
+                modifWindow.ShowDialog();
+                this.Close();
+            }
         }
     }
 }
