@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-C:\Users\celia\Desktop\SAE201\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\obj\Debug\netcoreapp3.1\
 SAE_Sujet2
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\celia\Desktop\SAE201\SAE_Squelette\SAE_Sujet2\App.xaml
+P:\SAE1\appli\SAE_Squelette\SAE_Sujet2\App.xaml
 4-1401956198
 
 142100963389
-193-1386797382
+193-2143116901
 AddWindow.xaml;MainWindow.xaml;ModifWindow.xaml;ShowWindow.xaml;
 
-True
+False
 

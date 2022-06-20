@@ -330,7 +330,7 @@ namespace SAE_Sujet2
         /// <summary>
         /// Méthode pour extraire les missions d'une BD avec un filtre
         /// </summary>
-        /// <param name="criteres"></param>
+        /// <param name="libelle"></param>
         /// <returns></returns>
         public List<Mission> FindBySelection(string libelle)
         {

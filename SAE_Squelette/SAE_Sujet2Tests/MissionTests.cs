@@ -170,20 +170,14 @@ namespace SAE_Sujet2.Tests
         public void FindAllTest()
         {
             //bool test;
-            //int nb = 0;
-            //SqlCommand comm = new SqlCommand("select count(*) from[IUT - ACY\\claviozm].[EFFECTUE2]");
-            //DataAccess access = new DataAccess();
 
 
-            //List<Mission> listeMissions = FindAll();
+            //List<Mission> listeMissionsBy = FindBySelection("*");
 
-            //if (access.OpenConnection())
-            //{
-            //    nb = int.Parse(comm);
-            //    access.CloseConnection();
-            //}
+            //List<Mission> listeMissionsAll = FindAll();
 
-            //if (listeMissions.Count == nb)
+
+            //if (listeMissionsBy.Count == listeMissionsAll.Count)
             //{
             //    test = true;
             //}
@@ -193,13 +187,6 @@ namespace SAE_Sujet2.Tests
             //}
 
             //Assert.IsTrue(test);
-
-            //if (access.OpenConnection())
-            //{
-            //    access.SetData("delete from [IUT-ACY\\claviozm].[EFFECTUE2] where COMMENTAIRE = 'test find 4444';" +
-            //        "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test find 4444';");
-            //    access.CloseConnection();
-            //}
         }
 
         [TestMethod()]
@@ -230,51 +217,6 @@ namespace SAE_Sujet2.Tests
                     "delete from [IUT-ACY\\claviozm].[MISSION] where LIBELLEMISSION = 'test find 4444';");
                 access.CloseConnection();
             }
-        }
-
-        public List<Mission> FindAll()
-        {
-            List<Mission> listeMissions = new List<Mission>();
-            DataAccess access = new DataAccess();
-            SqlDataReader reader;
-            try
-            {
-                if (access.OpenConnection())
-                {
-                    reader = access.GetData("select e.*, LIBELLEMISSION from [IUT-ACY\\claviozm].[EFFECTUE2] e join [IUT-ACY\\claviozm].[MISSION] m on e.IDMISSION = m.IDMISSION;");
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            Mission uneMission = new Mission();
-                            uneMission.IdMission = reader.GetInt64(0);
-                            uneMission.IdDivision = reader.GetInt64(1);
-                            uneMission.DateAffectation = reader.GetDateTime(2);
-                            if (reader.GetValue(3) is string)
-                            {
-                                uneMission.Commentaire = reader.GetString(3);
-                            }
-                            else
-                            {
-                                uneMission.Commentaire = null;
-                            }
-                            uneMission.LibelleMission = reader.GetString(4);
-                            listeMissions.Add(uneMission);
-                        }
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show("No rows found.", "Important Message");
-                    }
-                    reader.Close();
-                    access.CloseConnection();
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message, "Important Message");
-            }
-            return listeMissions;
         }
 
         public List<Mission> FindBySelection(string libelle)
